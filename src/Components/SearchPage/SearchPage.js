@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const BodyForm = styled.form`
+const SearchPageForm = styled.form`
   border: 3px solid green;
   display: flex;
   flex-direction: column;
@@ -10,14 +10,14 @@ const BodyForm = styled.form`
   padding: 20px 0;
 `;
 
-const BodyInput = styled.input`
+const SearchPageInput = styled.input`
   border: 1px #ccc solid;
 `;
 
-export const Body = () => {
+export const SearchPage = () => {
   return (
-    <BodyForm>
-      <BodyInput type="text" name="ingredient" placeholder="Ingredient" />
+    <SearchPageForm>
+      <SearchPageInput type="text" name="ingredient" placeholder="Ingredient" />
       <div>
         <h3>Recent Searches</h3>
         <ol>
@@ -26,8 +26,8 @@ export const Body = () => {
         </ol>
       </div>
       <input type="submit" value="Submit" />
-    </BodyForm>
+    </SearchPageForm>
   );
 };
 
-export default Body;
+export default SearchPage;
