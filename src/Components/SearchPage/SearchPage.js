@@ -1,27 +1,13 @@
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
-import styled from "styled-components";
 
 import { search } from "Store/Actions/actions";
 
-// import { API_KEY } from 'Constants/contants';
+import * as Styled from "./SearchPageStyles";
 
 const mapDispatchToProps = {
   searchBound: search
 };
-
-const SearchPageForm = styled.form`
-  border: 3px solid green;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 0;
-`;
-
-const SearchPageInput = styled.input`
-  border: 1px #ccc solid;
-`;
 
 class SearchPage extends PureComponent {
   constructor(props) {
@@ -44,20 +30,15 @@ class SearchPage extends PureComponent {
 
     const { value } = this.state;
 
-    alert("Ingredient submitted: " + value);
-
     event.preventDefault();
 
     searchBound(value);
   }
 
-  // query
-  // https://api.spoonacular.com/food/products/search?query=${this.state.value}&apiKey=${API_KEY}
-
   render() {
     return (
-      <SearchPageForm onSubmit={this.handleSubmit}>
-        <SearchPageInput
+      <Styled.SearchPageForm onSubmit={this.handleSubmit}>
+        <Styled.SearchPageInput
           value={this.state.value}
           onChange={this.handleChange}
           placeholder="Ingredient"
@@ -70,7 +51,7 @@ class SearchPage extends PureComponent {
           </ol>
         </div>
         <input type="submit" value="Submit" />
-      </SearchPageForm>
+      </Styled.SearchPageForm>
     );
   }
 }

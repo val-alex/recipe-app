@@ -2,16 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import { Provider } from "react-redux";
-import { createStore } from "redux";
-import rootReducer from "Store/Reducers/rootReducer";
+
+import store from "Store";
 
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-
-const store = createStore(
-  rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
 
 const rootElement = document.getElementById("root");
 

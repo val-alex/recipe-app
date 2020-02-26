@@ -1,3 +1,6 @@
-const rootReducer = state => state;
+import { combineReducers } from "redux";
+import searchReducer from "./searchReducer";
 
-export default rootReducer;
+export default combineReducers({
+  searchReducer
+});
