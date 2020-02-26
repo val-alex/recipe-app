@@ -1,9 +1,14 @@
 import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import { search } from "Store/Actions/actions";
 
 import * as Styled from "./SearchPageStyles";
+
+const mapStateToProps = state => ({
+  previousSearches: state.baseStore.recentSearches || []
+});
 
 const mapDispatchToProps = {
   searchBound: search
@@ -21,6 +26,14 @@ class SearchPage extends PureComponent {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  static propTypes = {
+    previousSearches: PropTypes.arrayOf(PropTypes.string)
+  };
+
+  static defaultProps = {
+    previousSearches: ""
+  };
+
   handleChange(event) {
     this.setState({ value: event.target.value });
   }
@@ -36,6 +49,8 @@ class SearchPage extends PureComponent {
   }
 
   render() {
+    const { previousSearches } = this.props;
+
     return (
       <Styled.SearchPageForm onSubmit={this.handleSubmit}>
         <Styled.SearchPageInput
@@ -43,17 +58,22 @@ class SearchPage extends PureComponent {
           onChange={this.handleChange}
           placeholder="Ingredient"
         />
-        <div>
-          <h3>Recent Searches</h3>
-          <ol>
-            <li>Search History 1</li>
-            <li>Search History 2</li>
-          </ol>
-        </div>
+
+        {!!previousSearches.length && (
+          <div>
+            <h3>Recent Searches</h3>
+            <ol>
+              {previousSearches.map((ingredient, index) => (
+                <li key={index}>{ingredient}</li>
+              ))}
+            </ol>
+          </div>
+        )}
+
         <input type="submit" value="Submit" />
       </Styled.SearchPageForm>
     );
   }
 }
 
-export default connect(null, mapDispatchToProps)(SearchPage);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchPage);

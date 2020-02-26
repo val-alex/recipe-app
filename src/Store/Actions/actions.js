@@ -1,6 +1,6 @@
 export const types = {
   SEARCH_TYPE: "SEARCH_TYPE",
-  SEARCH_RESULT: "SEARCH_RESULT",
+  BASE_STORE: "BASE_STORE",
   SET_RECENT_SEARCH: "SET_RECENT_SEARCH"
 };
 
@@ -14,7 +14,7 @@ export const search = query => {
 export const setResults = results => {
   return {
     results,
-    type: types.SEARCH_RESULT
+    type: types.BASE_STORE
   };
 };
 

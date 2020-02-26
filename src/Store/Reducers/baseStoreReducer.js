@@ -5,7 +5,7 @@ const initialState = {};
 
 export default handleActions(
   {
-    [types.SEARCH_RESULT]: (state, action) => ({
+    [types.BASE_STORE]: (state, action) => ({
       ...state,
       results: action.results
     }),
