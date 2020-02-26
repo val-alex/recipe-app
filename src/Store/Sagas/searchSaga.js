@@ -1,24 +1,31 @@
 import { takeEvery, call, put } from "redux-saga/effects";
 
-import { types, setResults, setRecentSearches } from "Store/Actions/actions";
+import {
+  types,
+  setReturnedRecipes,
+  setRecentSearches
+} from "Store/Actions/actions";
 import { API_KEY } from "Constants/contants";
 
-function fetchSaga(query) {
-  const queryRequest = `https://api.spoonacular.com/food/products/search?query=${query}&apiKey=${API_KEY}`;
+function fetchRecipesSaga(ingredients) {
+  //CHANGE_ME
+  const NUMBER_OF_RECIPES = 2;
+  const ingredientsList = ingredients; // CHANGE_ME write a map that reformats everything
 
-  return fetch(queryRequest).then(response => response.json());
+  const recipesRequest = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredientsList}&number=${NUMBER_OF_RECIPES}&apiKey=${API_KEY}`;
+
+  return fetch(recipesRequest).then(response => response.json());
 }
 
-function* requestSaga({ query }) {
-  const response = yield call(fetchSaga, query);
-  const results = response.products;
+function* requestSaga({ ingredients }) {
+  const recipes = yield call(fetchRecipesSaga, ingredients);
 
-  yield put(setResults(results));
-  yield put(setRecentSearches(query));
+  yield put(setReturnedRecipes(recipes));
+  yield put(setRecentSearches(ingredients));
 }
 
 function* searchSaga() {
-  yield takeEvery(types.SEARCH_TYPE, requestSaga);
+  yield takeEvery(types.SEARCH_RECIPES, requestSaga);
 }
 
 export default [searchSaga];

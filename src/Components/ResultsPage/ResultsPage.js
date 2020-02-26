@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => ({
-  searchResults: state.baseStore.results || []
+  searchResults: state.recipes.results || []
 });
 
 class ResultsPage extends PureComponent {

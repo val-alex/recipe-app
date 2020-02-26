@@ -1,20 +1,20 @@
 export const types = {
-  SEARCH_TYPE: "SEARCH_TYPE",
-  BASE_STORE: "BASE_STORE",
+  SEARCH_RECIPES: "SEARCH_RECIPES",
+  RECIPES: "RECIPES",
   SET_RECENT_SEARCH: "SET_RECENT_SEARCH"
 };
 
-export const search = query => {
+export const search = ingredients => {
   return {
-    type: types.SEARCH_TYPE,
-    query
+    type: types.SEARCH_RECIPES,
+    ingredients
   };
 };
 
-export const setResults = results => {
+export const setReturnedRecipes = results => {
   return {
     results,
-    type: types.BASE_STORE
+    type: types.RECIPES
   };
 };
 

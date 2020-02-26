@@ -7,7 +7,7 @@ import { search } from "Store/Actions/actions";
 import * as Styled from "./SearchPageStyles";
 
 const mapStateToProps = state => ({
-  previousSearches: state.baseStore.recentSearches || []
+  previousSearches: state.recipes.recentSearches || []
 });
 
 const mapDispatchToProps = {
