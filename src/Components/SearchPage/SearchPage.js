@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import { search } from "Store/Actions/actions";
+import { requestRecipes } from "Store/Actions/actions";
 
 import IngredientsForm from "Components/Forms/ingredientsForm/IngredientsForm";
 
@@ -13,11 +13,11 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  searchBound: search
+  requestRecipesBound: requestRecipes
 };
 
 export const SearchPage = ({ previousSearches }) => (
-  <div className="search-page-wrapper">
+  <div className="request-recipes-page-wrapper">
     <IngredientsForm>
       {!!previousSearches.length && (
         <div>

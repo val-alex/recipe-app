@@ -5,9 +5,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { withRouter } from "react-router-dom";
 
-import { search } from "Store/Actions/actions";
-
-import Error from "./Error";
+import { requestRecipes } from "Store/Actions/actions";
 
 // import * as Styles from "./IngredientsFormStyles";
 
@@ -18,16 +16,26 @@ const validationSchema = Yup.object().shape({
 });
 
 const mapDispatchToProps = {
-  searchBound: search
+  requestRecipesBound: requestRecipes
+};
+
+export const Error = ({ touched, message }) => {
+  if (!touched) {
+    return <div className="form-message invalid">&nbsp;</div>;
+  }
+  if (message) {
+    return <div className="form-message invalid">{message}</div>;
+  }
+  return <div className="form-message valid">valid</div>;
 };
 
 export class IngredientsForm extends PureComponent {
   handleSubmit = (values, actions) => {
-    const { searchBound, history } = this.props;
+    const { requestRecipesBound, history } = this.props;
 
     actions.setSubmitting(true);
 
-    searchBound(values.ingredients);
+    requestRecipesBound(values.ingredients);
 
     actions.resetForm();
     actions.setSubmitting(false);
@@ -66,7 +74,7 @@ export class IngredientsForm extends PureComponent {
                 value={values.ingredients}
                 className={
                   touched.ingredients && errors.ingredients ? "has-error" : null
-                } // CHANGE_ME create styles for error, red border and red text
+                }
               />
               <Error
                 touched={touched.ingredients}

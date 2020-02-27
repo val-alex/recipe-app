@@ -4,14 +4,14 @@ export const types = {
   SET_RECENT_SEARCH: "SET_RECENT_SEARCH"
 };
 
-export const search = ingredients => {
+export const requestRecipes = ingredients => {
   return {
     type: types.SEARCH_RECIPES,
     ingredients
   };
 };
 
-export const setReturnedRecipes = results => {
+export const setRecipes = results => {
   return {
     results,
     type: types.RECIPES

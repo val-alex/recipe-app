@@ -5,10 +5,10 @@ import Footer from "Layouts/Footer/Footer";
 
 export const HomePage = () => {
   return (
-    <>
+    <div className="home-page-wrapper">
       <NavBar />
       <Footer />
-    </>
+    </div>
   );
 };
 

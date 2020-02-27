@@ -8,7 +8,7 @@ describe("(component) IngredientsForm", () => {
   let instance;
 
   beforeEach(() => {
-    // CHANGE_ME do the searchBound thing
+    // CHANGE_ME do the requestRecipesBound thing
     const requiredProps = {};
 
     wrapper = shallow(<IngredientsForm {...requiredProps} />);
