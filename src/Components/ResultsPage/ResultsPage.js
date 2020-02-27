@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
 const mapStateToProps = state => ({
   searchResults: state.recipes.results || []
@@ -21,17 +22,23 @@ class ResultsPage extends PureComponent {
     const { searchResults } = this.props;
 
     return (
-      !!searchResults.length && (
-        <>
-          <div>back button ( material icons )</div>
-          <h3>Results</h3>
-          {searchResults.map((result, index) => (
-            <div key={index}>{result.title}</div>
-          ))}
-        </>
-      )
+      <>
+        <button onClick={() => this.props.history.goBack()}>Back</button>
+        {!!searchResults.length && (
+          <>
+            <div>back button ( material icons )</div>
+            <h3>Results</h3>
+            {searchResults.map((result, index) => (
+              <div key={index}>
+                {result.title}
+                <br />
+              </div>
+            ))}
+          </>
+        )}
+      </>
     );
   }
 }
 
-export default connect(mapStateToProps)(ResultsPage);
+export default withRouter(connect(mapStateToProps)(ResultsPage));

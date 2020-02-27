@@ -5,11 +5,9 @@ import {
   setReturnedRecipes,
   setRecentSearches
 } from "Store/Actions/actions";
-import { API_KEY } from "Constants/constants";
+import { API_KEY, NUMBER_OF_RECIPES } from "Constants/constants";
 
 function fetchRecipesSaga(ingredients) {
-  //CHANGE_ME
-  const NUMBER_OF_RECIPES = 2;
   const ingredientsList = ingredients; // CHANGE_ME write a map that reformats everything
 
   const recipesRequest = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredientsList}&number=${NUMBER_OF_RECIPES}&apiKey=${API_KEY}`;
