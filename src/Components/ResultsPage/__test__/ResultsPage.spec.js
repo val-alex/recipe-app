@@ -1,8 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-import IngredientsForm from "Components/Forms/ingredientsForm/IngredientsForm";
-
 import { ResultsPage } from "../ResultsPage.js";
 
 describe("(component) ResultsPage", () => {
@@ -20,7 +18,6 @@ describe("(component) ResultsPage", () => {
 
   describe("render", () => {
     it("IngredientsForm", () => {
-      console.log(wrapper);
       expect(wrapper).toExist();
       expect(wrapper.find(".results-page-wrapper")).toExist();
     });
