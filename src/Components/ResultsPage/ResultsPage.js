@@ -24,18 +24,11 @@ class ResultsPage extends PureComponent {
     return (
       <>
         <button onClick={() => this.props.history.goBack()}>Back</button>
-        {!!searchResults.length && (
-          <>
-            <div>back button ( material icons )</div>
-            <h3>Results</h3>
-            {searchResults.map((result, index) => (
-              <div key={index}>
-                {result.title}
-                <br />
-              </div>
-            ))}
-          </>
-        )}
+        <h3>Results</h3>
+        {!!searchResults.length &&
+          searchResults.map((result, index) => (
+            <div key={index}>{result.title}</div>
+          ))}
       </>
     );
   }
