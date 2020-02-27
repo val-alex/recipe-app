@@ -5,7 +5,7 @@ import {
   setReturnedRecipes,
   setRecentSearches
 } from "Store/Actions/actions";
-import { API_KEY } from "Constants/contants";
+import { API_KEY } from "Constants/constants";
 
 function fetchRecipesSaga(ingredients) {
   //CHANGE_ME

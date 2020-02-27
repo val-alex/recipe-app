@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 class ResultsPage extends PureComponent {
   static propTypes = {
     searchResults: PropTypes.arrayOf(
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number]) // CHANGE_ME allow this to pass verification for empty array as well
     )
   };
 
