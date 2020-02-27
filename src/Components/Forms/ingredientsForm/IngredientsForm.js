@@ -21,7 +21,7 @@ const mapDispatchToProps = {
   searchBound: search
 };
 
-class IngredientsForm extends PureComponent {
+export class IngredientsForm extends PureComponent {
   handleSubmit = (values, actions) => {
     const { searchBound, history } = this.props;
 

@@ -16,19 +16,21 @@ const mapDispatchToProps = {
   searchBound: search
 };
 
-const SearchPage = ({ previousSearches }) => (
-  <IngredientsForm>
-    {!!previousSearches.length && (
-      <div>
-        <h3>Recent Searches</h3>
-        <ol>
-          {previousSearches.map((ingredient, index) => (
-            <li key={index}>{ingredient}</li>
-          ))}
-        </ol>
-      </div>
-    )}
-  </IngredientsForm>
+export const SearchPage = ({ previousSearches }) => (
+  <div className="search-page-wrapper">
+    <IngredientsForm>
+      {!!previousSearches.length && (
+        <div>
+          <h3>Recent Searches</h3>
+          <ol>
+            {previousSearches.map((ingredient, index) => (
+              <li key={index}>{ingredient}</li>
+            ))}
+          </ol>
+        </div>
+      )}
+    </IngredientsForm>
+  </div>
 );
 
 SearchPage.propTypes = {
