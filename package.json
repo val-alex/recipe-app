@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.1.2",
     "formik": "^2.1.4",
     "husky": "^4.2.3",
+    "jest-enzyme": "^7.1.2",
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
