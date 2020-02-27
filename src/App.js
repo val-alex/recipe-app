@@ -31,13 +31,11 @@ const GlobalStyle = createGlobalStyle`
 }
 `;
 
-export const App = () => {
-  return (
-    <>
-      <GlobalStyle />
-      <HomePage />
-    </>
-  );
-};
+export const App = () => (
+  <>
+    <GlobalStyle />
+    <HomePage />
+  </>
+);
 
 export default App;

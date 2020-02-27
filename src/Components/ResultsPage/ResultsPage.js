@@ -19,7 +19,7 @@ class ResultsPage extends PureComponent {
 
   render() {
     const { searchResults } = this.props;
-    console.log(`searchResults: `, searchResults);
+
     return (
       !!searchResults.length && (
         <>

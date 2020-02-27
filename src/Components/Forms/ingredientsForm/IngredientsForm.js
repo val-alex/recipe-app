@@ -3,6 +3,7 @@ import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import { withRouter } from "react-router-dom";
 
 import { search } from "Store/Actions/actions";
 
@@ -21,19 +22,27 @@ const mapDispatchToProps = {
 };
 
 class IngredientsForm extends PureComponent {
+  handleSubmit = (values, actions) => {
+    const { searchBound, history } = this.props;
+
+    actions.setSubmitting(true);
+
+    searchBound(values.ingredients);
+
+    actions.resetForm();
+    actions.setSubmitting(false);
+
+    history.push("/resultsPage");
+  };
+
   render() {
-    const { searchBound, children } = this.props;
+    const { children } = this.props;
 
     return (
       <Formik
         initialValues={{ ingredients: "" }}
         validationSchema={validationSchema}
-        onSubmit={(values, { setSubmitting, resetForm }) => {
-          setSubmitting(true);
-          searchBound(values.ingredients);
-          resetForm();
-          setSubmitting(false);
-        }}
+        onSubmit={this.handleSubmit}
       >
         {({
           values,
@@ -79,4 +88,4 @@ class IngredientsForm extends PureComponent {
   }
 }
 
-export default connect(null, mapDispatchToProps)(IngredientsForm);
+export default withRouter(connect(null, mapDispatchToProps)(IngredientsForm));
