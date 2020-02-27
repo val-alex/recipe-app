@@ -1,6 +1,5 @@
 import React from "react";
 import { shallow } from "enzyme";
-// import { render } from '@testing-library/react';
 
 import IngredientsForm from "Components/Forms/ingredientsForm/IngredientsForm";
 
