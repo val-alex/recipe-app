@@ -14,32 +14,33 @@ const validationSchema = Yup.object().shape({
     .required("Must enter an ingredient")
 });
 
-const mapDispatchToProps = {
-  requestRecipesBound: requestRecipes
-};
-
 export const Error = ({ touched, message }) => {
   if (!touched) {
     return <Styles.FromError>&nbsp;</Styles.FromError>;
   }
+
   if (message) {
     return <Styles.FromError>{message}</Styles.FromError>;
   }
+
   return <Styles.FromValid>Valid</Styles.FromValid>;
+};
+
+const mapDispatchToProps = {
+  requestRecipesBound: requestRecipes
 };
 
 export class IngredientsForm extends PureComponent {
   handleSubmit = (values, actions) => {
     const { requestRecipesBound, history } = this.props;
-
     actions.setSubmitting(true);
 
     requestRecipesBound(values.ingredients);
 
-    history.push("/results");
-
     actions.resetForm();
     actions.setSubmitting(false);
+
+    history.push("/results");
   };
 
   render() {
@@ -65,6 +66,7 @@ export class IngredientsForm extends PureComponent {
               <Styles.FromLabel htmlFor="ingredients">
                 Ingredients:
               </Styles.FromLabel>
+
               <Styles.FromInput
                 type="text"
                 name="ingredients"
@@ -74,6 +76,7 @@ export class IngredientsForm extends PureComponent {
                 onBlur={handleBlur}
                 value={values.ingredients}
               />
+
               <Error
                 touched={touched.ingredients}
                 message={errors.ingredients}

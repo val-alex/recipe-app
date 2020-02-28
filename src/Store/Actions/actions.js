@@ -1,4 +1,4 @@
-export const types = {
+export const TYPES = {
   SEARCH_RECIPES: "SEARCH_RECIPES",
   RECIPES: "RECIPES",
   SET_RECENT_SEARCH: "SET_RECENT_SEARCH"
@@ -6,7 +6,7 @@ export const types = {
 
 export const requestRecipes = ingredients => {
   return {
-    type: types.SEARCH_RECIPES,
+    type: TYPES.SEARCH_RECIPES,
     ingredients
   };
 };
@@ -14,13 +14,13 @@ export const requestRecipes = ingredients => {
 export const setRecipes = results => {
   return {
     results,
-    type: types.RECIPES
+    type: TYPES.RECIPES
   };
 };
 
 export const setRecentSearches = ingredient => {
   return {
     ingredient,
-    type: types.SET_RECENT_SEARCH
+    type: TYPES.SET_RECENT_SEARCH
   };
 };

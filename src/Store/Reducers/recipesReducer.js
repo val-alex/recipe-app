@@ -1,15 +1,15 @@
 import { handleActions } from "redux-actions";
-import { types } from "Store/Actions/actions";
+import { TYPES } from "Store/Actions/actions";
 
 const initialState = {};
 
 export default handleActions(
   {
-    [types.RECIPES]: (state, action) => ({
+    [TYPES.RECIPES]: (state, action) => ({
       ...state,
       results: action.results
     }),
-    [types.SET_RECENT_SEARCH]: (state, action) => {
+    [TYPES.SET_RECENT_SEARCH]: (state, action) => {
       let newState = state;
 
       const ingredient = action.ingredient;

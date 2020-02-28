@@ -1,6 +1,6 @@
 import { takeEvery, call, put } from "redux-saga/effects";
 
-import { types, setRecipes, setRecentSearches } from "Store/Actions/actions";
+import { TYPES, setRecipes, setRecentSearches } from "Store/Actions/actions";
 
 import { API_KEY, NUMBER_OF_RECIPES } from "Constants/constants";
 
@@ -20,7 +20,7 @@ export function* requestSaga({ ingredients }) {
 }
 
 export function* searchSaga() {
-  yield takeEvery(types.SEARCH_RECIPES, requestSaga);
+  yield takeEvery(TYPES.SEARCH_RECIPES, requestSaga);
 }
 
 export default [searchSaga];
