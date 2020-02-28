@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FromInputWrapper = styled.div`
+export const FormInputWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,12 +8,12 @@ export const FromInputWrapper = styled.div`
   margin: 20px;
 `;
 
-export const FromLabel = styled.label`
+export const FormLabel = styled.label`
   font-weight: bold;
   font-size: 16px;
 `;
 
-export const FromInput = styled.input`
+export const FormInput = styled.input`
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -26,7 +26,7 @@ export const FromInput = styled.input`
   }
 `;
 
-export const FromButton = styled.button`
+export const FormButton = styled.button`
   background-color: #555;
   border: none;
   color: white;
@@ -39,10 +39,10 @@ export const FromButton = styled.button`
   border-radius: 4px;
 `;
 
-export const FromError = styled.div`
+export const FormError = styled.div`
   color: red;
 `;
 
-export const FromValid = styled.div`
+export const FormValid = styled.div`
   color: green;
 `;

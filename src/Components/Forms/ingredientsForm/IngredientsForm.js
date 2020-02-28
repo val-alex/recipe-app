@@ -16,14 +16,14 @@ const validationSchema = Yup.object().shape({
 
 export const Error = ({ touched, message }) => {
   if (!touched) {
-    return <Styles.FromError>&nbsp;</Styles.FromError>;
+    return <Styles.FormError>&nbsp;</Styles.FormError>;
   }
 
   if (message) {
-    return <Styles.FromError>{message}</Styles.FromError>;
+    return <Styles.FormError>{message}</Styles.FormError>;
   }
 
-  return <Styles.FromValid>Valid</Styles.FromValid>;
+  return <Styles.FormValid>Valid</Styles.FormValid>;
 };
 
 const mapDispatchToProps = {
@@ -61,13 +61,13 @@ export class IngredientsForm extends PureComponent {
           handleSubmit,
           isSubmitting
         }) => (
-          <Styles.FromInputWrapper>
+          <Styles.FormInputWrapper>
             <form onSubmit={handleSubmit}>
-              <Styles.FromLabel htmlFor="ingredients">
+              <Styles.FormLabel htmlFor="ingredients">
                 Ingredients:
-              </Styles.FromLabel>
+              </Styles.FormLabel>
 
-              <Styles.FromInput
+              <Styles.FormInput
                 type="text"
                 name="ingredients"
                 if="ingredients"
@@ -84,11 +84,11 @@ export class IngredientsForm extends PureComponent {
 
               {!!children && <div>{children}</div>}
 
-              <Styles.FromButton type="submit" disabled={isSubmitting}>
+              <Styles.FormButton type="submit" disabled={isSubmitting}>
                 Search
-              </Styles.FromButton>
+              </Styles.FormButton>
             </form>
-          </Styles.FromInputWrapper>
+          </Styles.FormInputWrapper>
         )}
       </Formik>
     );
