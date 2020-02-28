@@ -1,16 +1,50 @@
-// CHANGE_ME fix reducer test
-
 import { TYPES } from "Store/Actions/actions";
 import recipesReducer from "../recipesReducer";
 
-// describe('(reducer) recipesReducer', () => {
-//   it('should set recent searches', () => {
-//     const newState = recipesReducer({}, {
-//       results: ['result1'],
-//       type: TYPES.SET_RECENT_SEARCH,
-//     });
-//     expect(newState).toEqual({
-//       results: ['result1'],
-//     });
-//   });
-// });
+describe("(reducer) recipesReducer", () => {
+  it("returns new state based on RECIPES action", () => {
+    const state = "";
+
+    const action = {
+      results: [
+        {
+          helloWorld: "helloWorld"
+        },
+        {
+          helloWorld: "helloWorld"
+        }
+      ],
+      type: TYPES.RECIPES
+    };
+
+    const reduced = recipesReducer(state, action);
+
+    expect(reduced).toEqual({
+      results: [
+        {
+          helloWorld: "helloWorld"
+        },
+        {
+          helloWorld: "helloWorld"
+        }
+      ]
+    });
+  });
+
+  it("should set recent searches", () => {
+    const state = {
+      recentSearches: ["grape"]
+    };
+
+    const action = {
+      ingredient: "apple, banana",
+      type: TYPES.SET_RECENT_SEARCH
+    };
+
+    const reduced = recipesReducer(state, action);
+
+    expect(reduced).toEqual({
+      recentSearches: ["grape", "apple, banana"]
+    });
+  });
+});
