@@ -5,7 +5,7 @@ import { setRecipes, setRecentSearches } from "Store/Actions/actions";
 import { fetchRecipesSaga, requestSaga } from "../searchSaga";
 
 describe("requestSaga", () => {
-  it("", () => {
+  it("(saga) fetches recipies and adds them to the store", () => {
     const ingredients = "apples,banana";
 
     const generator = requestSaga({ ingredients });

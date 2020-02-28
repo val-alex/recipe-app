@@ -1,7 +1,9 @@
 import { handleActions } from "redux-actions";
 import { TYPES } from "Store/Actions/actions";
 
-const initialState = {};
+const initialState = {
+  recentSearches: []
+};
 
 export default handleActions(
   {
@@ -10,16 +12,15 @@ export default handleActions(
       results: action.results
     }),
     [TYPES.SET_RECENT_SEARCH]: (state, action) => {
-      let newState = state;
-
       const ingredient = action.ingredient;
-      const recentSearches = state.recentSearches || [];
+      const recentSearches = [...state.recentSearches];
 
       recentSearches.push(ingredient);
 
-      newState.recentSearches = recentSearches;
-
-      return newState;
+      return {
+        ...state,
+        recentSearches
+      };
     }
   },
   initialState

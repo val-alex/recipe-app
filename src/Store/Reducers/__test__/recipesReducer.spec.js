@@ -31,7 +31,7 @@ describe("(reducer) recipesReducer", () => {
     });
   });
 
-  it("should set recent searches", () => {
+  it("returns new state based on SET_RECENT_SEARCH action", () => {
     const state = {
       recentSearches: ["grape"]
     };
