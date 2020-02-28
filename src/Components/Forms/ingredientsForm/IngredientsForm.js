@@ -1,5 +1,4 @@
 import React, { PureComponent } from "react";
-// import PropTypes from "prop-types"
 import { connect } from "react-redux";
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -7,7 +6,7 @@ import { withRouter } from "react-router-dom";
 
 import { requestRecipes } from "Store/Actions/actions";
 
-// import * as Styles from "./IngredientsFormStyles";
+import * as Styles from "./IngredientsFormStyles";
 
 const validationSchema = Yup.object().shape({
   ingredients: Yup.string()
@@ -21,12 +20,12 @@ const mapDispatchToProps = {
 
 export const Error = ({ touched, message }) => {
   if (!touched) {
-    return <div className="form-message invalid">&nbsp;</div>;
+    return <Styles.FromError>&nbsp;</Styles.FromError>;
   }
   if (message) {
-    return <div className="form-message invalid">{message}</div>;
+    return <Styles.FromError>{message}</Styles.FromError>;
   }
-  return <div className="form-message valid">valid</div>;
+  return <Styles.FromValid>Valid</Styles.FromValid>;
 };
 
 export class IngredientsForm extends PureComponent {
@@ -37,10 +36,10 @@ export class IngredientsForm extends PureComponent {
 
     requestRecipesBound(values.ingredients);
 
+    history.push("/results");
+
     actions.resetForm();
     actions.setSubmitting(false);
-
-    history.push("/resultsPage");
   };
 
   render() {
@@ -61,10 +60,12 @@ export class IngredientsForm extends PureComponent {
           handleSubmit,
           isSubmitting
         }) => (
-          <form onSubmit={handleSubmit}>
-            <div className="input-row">
-              <label htmlFor="ingredients">Ingredients</label>
-              <input
+          <Styles.FromInputWrapper>
+            <form onSubmit={handleSubmit}>
+              <Styles.FromLabel htmlFor="ingredients">
+                Ingredients:
+              </Styles.FromLabel>
+              <Styles.FromInput
                 type="text"
                 name="ingredients"
                 if="ingredients"
@@ -72,24 +73,19 @@ export class IngredientsForm extends PureComponent {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.ingredients}
-                className={
-                  touched.ingredients && errors.ingredients ? "has-error" : null
-                }
               />
               <Error
                 touched={touched.ingredients}
                 message={errors.ingredients}
               />
-            </div>
 
-            {!!children && <div>{children}</div>}
+              {!!children && <div>{children}</div>}
 
-            <div>
-              <button type="submit" disabled={isSubmitting}>
+              <Styles.FromButton type="submit" disabled={isSubmitting}>
                 Search
-              </button>
-            </div>
-          </form>
+              </Styles.FromButton>
+            </form>
+          </Styles.FromInputWrapper>
         )}
       </Formik>
     );

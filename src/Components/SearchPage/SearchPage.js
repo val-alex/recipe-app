@@ -6,8 +6,6 @@ import { requestRecipes } from "Store/Actions/actions";
 
 import IngredientsForm from "Components/Forms/ingredientsForm/IngredientsForm";
 
-// import * as Styles from "./SearchPageStyles";
-
 const mapStateToProps = state => ({
   previousSearches: state.recipes.recentSearches || []
 });
@@ -17,20 +15,18 @@ const mapDispatchToProps = {
 };
 
 export const SearchPage = ({ previousSearches }) => (
-  <div className="request-recipes-page-wrapper">
-    <IngredientsForm>
-      {!!previousSearches.length && (
-        <div>
-          <h3>Recent Searches</h3>
-          <ol>
-            {previousSearches.map((ingredient, index) => (
-              <li key={index}>{ingredient}</li>
-            ))}
-          </ol>
-        </div>
-      )}
-    </IngredientsForm>
-  </div>
+  <IngredientsForm>
+    {!!previousSearches.length && (
+      <div>
+        <h4>Recent Searches:</h4>
+        <ol>
+          {previousSearches.map((ingredient, index) => (
+            <li key={index}>{ingredient}</li>
+          ))}
+        </ol>
+      </div>
+    )}
+  </IngredientsForm>
 );
 
 SearchPage.propTypes = {

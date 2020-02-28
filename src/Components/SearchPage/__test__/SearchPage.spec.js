@@ -21,7 +21,6 @@ describe("(component) SearchPage", () => {
   describe("render", () => {
     it("IngredientsForm", () => {
       expect(wrapper).toExist();
-      expect(wrapper.find(".requestRecipes-page-wrapper")).toExist();
       expect(wrapper.find(IngredientsForm)).toExist();
     });
   });

@@ -1,7 +1,7 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
 
-import HomePage from "Layouts/HomePage/HomePage";
+import Navigation from "Layouts/Navigation/Navigation";
 
 const GlobalStyle = createGlobalStyle`
 *,
@@ -34,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
 export const App = () => (
   <>
     <GlobalStyle />
-    <HomePage />
+    <Navigation />
   </>
 );
 

@@ -1,37 +1,40 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+
+import * as Styles from "./ResultsPageStyles";
 
 const mapStateToProps = state => ({
   searchResults: state.recipes.results || []
 });
 
-export class ResultsPage extends PureComponent {
-  static propTypes = {
-    searchResults: PropTypes.arrayOf(
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number]) // CHANGE_ME allow this to pass verification for empty array as well
-    )
-  };
+export const ResultsPage = ({ searchResults, history }) => (
+  <Styles.ResultsPageWrapper>
+    <Styles.ResultsButton onClick={() => history.goBack()}>
+      Back
+    </Styles.ResultsButton>
 
-  static defaultProps = {
-    searchResults: []
-  };
+    <Styles.ResultsTitle>Results:</Styles.ResultsTitle>
 
-  render() {
-    const { searchResults } = this.props;
+    {!!searchResults.length && (
+      <ul>
+        {searchResults.map((result, index) => (
+          <li key={index}>{result.title}</li>
+        ))}
+      </ul>
+    )}
+  </Styles.ResultsPageWrapper>
+);
 
-    return (
-      <div className="results-page-wrapper">
-        <button onClick={() => this.props.history.goBack()}>Back</button>
-        <h3>Results</h3>
-        {!!searchResults.length &&
-          searchResults.map((result, index) => (
-            <div key={index}>{result.title}</div>
-          ))}
-      </div>
-    );
-  }
-}
+ResultsPage.propTypes = {
+  searchResults: PropTypes.arrayOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.number]) // CHANGE_ME allow this to pass verification for empty array as well
+  )
+};
+
+ResultsPage.defaultProps = {
+  searchResults: []
+};
 
 export default withRouter(connect(mapStateToProps)(ResultsPage));
