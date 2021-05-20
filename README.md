@@ -26,6 +26,8 @@ This app helps you to find recipes for ingredients you have available
 ![app-result](src/img/result.png)
 (App displays list of recipes that you can make for given ingredients )
 
+## Available Scripts
+
 #### `yarn start`
 
 #### `yarn test`
