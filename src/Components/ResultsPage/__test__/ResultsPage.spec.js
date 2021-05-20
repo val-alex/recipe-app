@@ -8,7 +8,7 @@ describe("(component) ResultsPage", () => {
 
   beforeEach(() => {
     const requiredProps = {
-      searchResults: ["result1", "result2"]
+      searchResults: [{ 1: "result1" }, { 2: "result2" }],
     };
 
     wrapper = shallow(<ResultsPage {...requiredProps} />);
