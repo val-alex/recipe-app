@@ -6,7 +6,7 @@ import ResultsPage from "Components/ResultsPage/ResultsPage";
 
 export const Navigation = () => {
   return (
-    <Router>
+    <Router basename="/recipe-app">
       <Switch>
         <Route component={SearchPage} exact path="/" />
         <Route component={SearchPage} exact path="/search" />
