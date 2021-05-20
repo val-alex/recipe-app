@@ -2,8 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Test description
 
-Using React + Redux, create a simple single page application with 2 views, displaying a list of items retrieved from a public api (  https://spoonacular.com/food-api/docs )
-
+Using React + Redux, create a simple single page application with 2 views, displaying a list of items retrieved from a public api ( https://spoonacular.com/food-api/docs )
 
 ![Wireframe](src/img/wireframe.jpg)
 (Wireframe for application)
@@ -16,16 +15,17 @@ Sign-up to spoonacular for a free public api and find your API key at https://sp
 Documentation on authentication with your API key https://spoonacular.com/food-api/docs#Authentication
 Documentation for the findByIngredients endpoint https://spoonacular.com/food-api/docs#Search-Recipes-by-Ingredients
 
-
 ## Available Scripts
 
 #### `yarn start`
+
 #### `yarn test`
+
 #### `yarn build`
 
-
 ## Things to Add
-  - Error handling
-  - Immutable state library
-  - Selectors for caching
 
+- "No recipes found" response if returned empty array
+- Error handling
+- Immutable state library
+- Selectors for caching
