@@ -1,40 +1,35 @@
-import React from "react";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 
-import { requestRecipes } from "Store/Actions/actions";
+import { selectRecipesRecentSearches } from "Store/Reducers/recipesSlice";
 
 import IngredientsForm from "Components/Forms/ingredientsForm/IngredientsForm";
 
-const mapStateToProps = state => ({
-  previousSearches: state.recipes.recentSearches || []
-});
+export const SearchPage = () => {
+  const recipesRecentSearches = useSelector(selectRecipesRecentSearches);
 
-const mapDispatchToProps = {
-  requestRecipesBound: requestRecipes
+  return (
+    <IngredientsForm>
+      {recipesRecentSearches.length > 0 ? (
+        <div>
+          <h4>Recent Searches:</h4>
+          <ol>
+            {recipesRecentSearches.map((ingredient, index) => (
+              <li key={index}>{ingredient}</li>
+            ))}
+          </ol>
+        </div>
+      ) : null}
+    </IngredientsForm>
+  );
 };
 
-export const SearchPage = ({ previousSearches }) => (
-  <IngredientsForm>
-    {!!previousSearches.length && (
-      <div>
-        <h4>Recent Searches:</h4>
-        <ol>
-          {previousSearches.map((ingredient, index) => (
-            <li key={index}>{ingredient}</li>
-          ))}
-        </ol>
-      </div>
-    )}
-  </IngredientsForm>
-);
-
 SearchPage.propTypes = {
-  previousSearches: PropTypes.array
+  previousSearches: PropTypes.array,
 };
 
 SearchPage.defaultProps = {
-  previousSearches: []
+  previousSearches: [],
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchPage);
+export default SearchPage;
