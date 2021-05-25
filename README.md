@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 https://val-alexeev.github.io/recipe-app/
 
+### Tech Stack
+
+#### `React, Redux Toolkit, Formik, Styled Components, Jest, Enzyme`
+
 ## App description
 
 Using React + Redux, create a simple single page application with 2 views, displaying a list of items retrieved from a public api ( https://spoonacular.com/food-api/docs )
@@ -42,5 +46,4 @@ This app helps you to find recipes for ingredients you have available
 
 - "No recipes found" response if returned empty array
 - Error handling
-- Immutable state library
 - Selectors for caching
