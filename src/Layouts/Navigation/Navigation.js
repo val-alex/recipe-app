@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import SearchPage from "Components/SearchPage/SearchPage";
@@ -10,7 +9,7 @@ export const Navigation = () => {
       <Switch>
         <Route component={SearchPage} exact path="/" />
         <Route component={SearchPage} exact path="/search" />
-        <Route component={ResultsPage} exact path="/results" />
+        <Route component={ResultsPage} exact path="/recipes" />
         <Route component={Error} />
       </Switch>
     </Router>

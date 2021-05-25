@@ -1,4 +1,3 @@
-import React from "react";
 import { createGlobalStyle } from "styled-components";
 
 import Navigation from "Layouts/Navigation/Navigation";

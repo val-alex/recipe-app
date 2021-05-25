@@ -1,20 +1,18 @@
-import React from "react";
-import { shallow } from "enzyme";
+import renderer from "react-test-renderer";
+import { Provider } from "react-redux";
 
-import { Navigation } from "Layouts/Navigation/Navigation";
+import store from "Store";
 
-import App from "./App";
+import { App } from "./App.js";
 
-describe("(component) App", () => {
-  let wrapper;
+it("renders correctly", () => {
+  const tree = renderer
+    .create(
+      <Provider store={store}>
+        <App />
+      </Provider>
+    )
+    .toJSON();
 
-  beforeEach(() => {
-    wrapper = shallow(<App />);
-  });
-
-  describe("render", () => {
-    it("Navigation", () => {
-      expect(wrapper.find(Navigation)).toExist();
-    });
-  });
+  expect(tree).toMatchSnapshot();
 });
