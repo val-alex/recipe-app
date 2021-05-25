@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 
 import { selectRecipesRecentSearches } from "Store/Reducers/recipesSlice";
@@ -22,14 +21,6 @@ export const SearchPage = () => {
       ) : null}
     </IngredientsForm>
   );
-};
-
-SearchPage.propTypes = {
-  previousSearches: PropTypes.array,
-};
-
-SearchPage.defaultProps = {
-  previousSearches: [],
 };
 
 export default SearchPage;

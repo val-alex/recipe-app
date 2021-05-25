@@ -1,6 +1,5 @@
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { withRouter } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
@@ -26,7 +25,7 @@ export const Error = ({ touched, message }) => {
   return <Styles.FormValid>Valid</Styles.FormValid>;
 };
 
-const IngredientsForm = ({ children }) => {
+export const IngredientsForm = ({ children }) => {
   const dispatch = useDispatch();
   let history = useHistory();
 
@@ -87,4 +86,4 @@ const IngredientsForm = ({ children }) => {
   );
 };
 
-export default withRouter(IngredientsForm);
+export default IngredientsForm;

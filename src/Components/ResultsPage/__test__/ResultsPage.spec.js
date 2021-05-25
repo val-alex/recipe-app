@@ -1,22 +1,18 @@
-import React from "react";
-import { shallow } from "enzyme";
+import renderer from "react-test-renderer";
+import { Provider } from "react-redux";
+
+import store from "Store";
 
 import { ResultsPage } from "../ResultsPage.js";
 
-describe("(component) ResultsPage", () => {
-  let wrapper;
+it("renders correctly", () => {
+  const tree = renderer
+    .create(
+      <Provider store={store}>
+        <ResultsPage />
+      </Provider>
+    )
+    .toJSON();
 
-  beforeEach(() => {
-    const requiredProps = {
-      searchResults: [{ 1: "result1" }, { 2: "result2" }],
-    };
-
-    wrapper = shallow(<ResultsPage {...requiredProps} />);
-  });
-
-  describe("render", () => {
-    it("IngredientsForm", () => {
-      expect(wrapper).toExist();
-    });
-  });
+  expect(tree).toMatchSnapshot();
 });

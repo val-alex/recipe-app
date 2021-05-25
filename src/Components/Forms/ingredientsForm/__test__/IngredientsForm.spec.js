@@ -1,23 +1,18 @@
-import React from "react";
-import { shallow } from "enzyme";
+import renderer from "react-test-renderer";
+import { Provider } from "react-redux";
+
+import store from "Store";
 
 import { IngredientsForm } from "../IngredientsForm.js";
 
-describe("(component) IngredientsForm", () => {
-  let wrapper;
-  let instance;
+it("renders correctly", () => {
+  const tree = renderer
+    .create(
+      <Provider store={store}>
+        <IngredientsForm />
+      </Provider>
+    )
+    .toJSON();
 
-  beforeEach(() => {
-    // CHANGE_ME do the requestRecipesBound thing
-    const requiredProps = {};
-
-    wrapper = shallow(<IngredientsForm {...requiredProps} />);
-    instance = wrapper.instance();
-  });
-
-  describe("render", () => {
-    it("IngredientsForm", () => {
-      expect(wrapper).toExist();
-    });
-  });
+  expect(tree).toMatchSnapshot();
 });

@@ -1,18 +1,18 @@
-import React from "react";
-import { shallow } from "enzyme";
+import renderer from "react-test-renderer";
+import { Provider } from "react-redux";
+
+import store from "Store";
 
 import { Navigation } from "../Navigation.js";
 
-describe("(component) Navigation", () => {
-  let wrapper;
+it("renders correctly", () => {
+  const tree = renderer
+    .create(
+      <Provider store={store}>
+        <Navigation />
+      </Provider>
+    )
+    .toJSON();
 
-  beforeEach(() => {
-    wrapper = shallow(<Navigation />);
-  });
-
-  describe("render", () => {
-    it("IngredientsForm", () => {
-      expect(wrapper).toExist();
-    });
-  });
+  expect(tree).toMatchSnapshot();
 });

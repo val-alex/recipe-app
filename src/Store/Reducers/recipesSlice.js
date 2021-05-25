@@ -5,7 +5,7 @@ import { API_KEY, NUMBER_OF_RECIPES } from "Constants/constants";
 export const getRecipes = createAsyncThunk(
   "recipes/getRecipes",
 
-  async (ingredients, thunkAPI) => {
+  async (ingredients) => {
     const ingredientsList = ingredients;
 
     const recipesRequest = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredientsList}&number=${NUMBER_OF_RECIPES}&apiKey=${API_KEY}`;
