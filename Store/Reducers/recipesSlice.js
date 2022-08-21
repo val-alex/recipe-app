@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { API_KEY, NUMBER_OF_RECIPES } from "Constants/constants";
+import { API_KEY, NUMBER_OF_RECIPES } from "../../constants/constants";
 
 // Thunk
 export const getRecipes = createAsyncThunk(
