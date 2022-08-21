@@ -1,9 +1,10 @@
-import { Formik } from "formik";
-import * as Yup from "yup";
-import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useRouter } from 'next/router';
 
-import { setRecentSearches, getRecipes } from "Store/Reducers/recipesSlice";
+import { Formik } from "formik";
+import { useDispatch } from "react-redux";
+import * as Yup from "yup";
+
+import { getRecipes, setRecentSearches } from "../../../Store/Reducers/recipesSlice";
 
 import * as Styles from "./IngredientsFormStyles";
 
@@ -27,7 +28,7 @@ export const Error = ({ touched, message }) => {
 
 export const IngredientsForm = ({ children }) => {
   const dispatch = useDispatch();
-  let history = useHistory();
+  let router = useRouter();
 
   const handleSubmit = ({ ingredients }, { setSubmitting, resetForm }) => {
     setSubmitting(true);
@@ -38,7 +39,7 @@ export const IngredientsForm = ({ children }) => {
     resetForm();
     setSubmitting(false);
 
-    history.push("/recipes");
+    router.push("/recipes");
   };
 
   return (
@@ -74,7 +75,7 @@ export const IngredientsForm = ({ children }) => {
 
             <Error touched={touched.ingredients} message={errors.ingredients} />
 
-            {!!children ? <div>{children}</div> : null}
+            {children ? <div>{children}</div> : null}
 
             <Styles.FormButton type="submit" disabled={isSubmitting}>
               Search

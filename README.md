@@ -6,13 +6,13 @@ https://val-alexeev.github.io/recipe-app/
 
 ### Tech Stack
 
-#### `React, Redux Toolkit, Formik, Styled Components, Jest, Enzyme`
+#### `Next.js, React.js, Redux, Formik, Styled Components, Jest, Enzyme`
 
 ## App description
 
 Using React + Redux, create a simple single page application with 2 views, displaying a list of items retrieved from a public api ( https://spoonacular.com/food-api/docs )
 
-![Wireframe](src/img/wireframe.jpg)
+![Wireframe](public/img/wireframe.jpg)
 (Wireframe for application)
 
 Pass the ingredients from the Ingredient Query text field to the findByIngredients api. On success, it should display the results on the next screen. Selecting a result should expand the result.
@@ -28,19 +28,19 @@ Documentation for the findByIngredients endpoint https://spoonacular.com/food-ap
 
 This app helps you to find recipes for ingredients you have available
 
-![app-use](src/img/use.png)
+![app-use](public/img/use.png)
 (Add ingredients you have separated by comma and click search)
 
-![app-result](src/img/result.png)
+![app-result](public/img/result.png)
 (App displays list of recipes that you can make for given ingredients )
 
 ## Available Scripts
 
-#### `yarn start`
+#### `pnpm dev`
 
-#### `yarn test`
+#### `pnpm build`
 
-#### `yarn build`
+#### `pnpm start`
 
 ## Things to Add
 

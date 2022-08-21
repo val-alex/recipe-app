@@ -1,8 +1,17 @@
 {
   "cSpell.words": [
-    "Formik",
     "browserslist",
+    "Formik",
+    "noopener",
+    "noreferrer",
+    "plugins",
+    "precached",
     "predeploy",
-    "reduxjs"
+    "preinstall",
+    "proptypes",
+    "rarr",
+    "reduxjs",
+    "rushstack",
+    "spoonacular"
   ]
 }
