@@ -1,25 +1,25 @@
-// import { setRecentSearches, setRecipes } from "../recipesSlice";
+import { setRecentSearches, setRecipes } from "../recipesSlice";
 
-// describe("(reducer) recipesSlice", () => {
-//   it("setRecipes", () => {
-//     const ingredients = "apple, grape";
+describe("(reducer) recipesSlice", () => {
+  it("setRecipes", () => {
+    const ingredients = "apple, grape";
 
-//     const reduced = setRecipes(ingredients);
+    const reduced = setRecipes(ingredients);
 
-//     expect(reduced).toEqual({
-//       payload: "apple, grape",
-//       type: "counter/setRecipes",
-//     });
-//   });
+    expect(reduced).toEqual({
+      payload: "apple, grape",
+      type: "counter/setRecipes",
+    });
+  });
 
-//   it("setRecentSearches", () => {
-//     const ingredients = "apple, banana";
+  it("setRecentSearches", () => {
+    const ingredients = "apple, banana";
 
-//     const reduced = setRecentSearches(ingredients);
+    const reduced = setRecentSearches(ingredients);
 
-//     expect(reduced).toEqual({
-//       payload: "apple, banana",
-//       type: "counter/setRecentSearches",
-//     });
-//   });
-// });
+    expect(reduced).toEqual({
+      payload: "apple, banana",
+      type: "counter/setRecentSearches",
+    });
+  });
+});

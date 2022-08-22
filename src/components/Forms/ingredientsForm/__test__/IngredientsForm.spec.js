@@ -1,18 +1,18 @@
-// import renderer from "react-test-renderer";
-// import { Provider } from "react-redux";
+import { Provider } from "react-redux";
+import renderer from "react-test-renderer";
 
-// import store from "Store";
+import store from "Store";
 
-// import { IngredientsForm } from "../IngredientsForm.js";
+import { IngredientsForm } from "../IngredientsForm.js";
 
-// it("renders correctly", () => {
-//   const tree = renderer
-//     .create(
-//       <Provider store={store}>
-//         <IngredientsForm />
-//       </Provider>
-//     )
-//     .toJSON();
+it("renders correctly", () => {
+  const tree = renderer
+    .create(
+      <Provider store={store}>
+        <IngredientsForm />
+      </Provider>
+    )
+    .toJSON();
 
-//   expect(tree).toMatchSnapshot();
-// });
+  expect(tree).toMatchSnapshot();
+});
