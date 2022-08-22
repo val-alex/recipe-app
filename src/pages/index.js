@@ -12,7 +12,10 @@ export const Home = () => {
       <Head>
         <title>Recipe App</title>
         <meta name="find recipe" content="recipes" />
-        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="icon"
+          href={`${process.env.NEXT_PUBLIC_FAVICON}/favicon.ico`}
+        />
       </Head>
 
       <main>
