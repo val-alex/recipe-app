@@ -1,12 +1,14 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 # URL
 
-https://val-alexeev.github.io/recipe-app/
+https://val-alex.github.io/recipe-app/
 
 ### Tech Stack
 
-#### `Next.js, React.js, Redux, Formik, Styled Components, Jest, Enzyme`
+- React.js
+- Next.js
+- Redux Thunk & Redux Sagas
+- Formik
+- Styled Components
 
 ## App description
 

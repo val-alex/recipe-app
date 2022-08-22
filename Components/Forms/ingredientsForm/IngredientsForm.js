@@ -57,8 +57,9 @@ export const IngredientsForm = ({ children }) => {
         handleSubmit,
         isSubmitting,
       }) => (
-        <Styles.FormInputWrapper>
-          <form onSubmit={handleSubmit}>
+
+        <form onSubmit={handleSubmit}>
+          <Styles.FormInputWrapper>
             <Styles.FormLabel htmlFor="ingredients">
               Ingredients:
             </Styles.FormLabel>
@@ -80,8 +81,8 @@ export const IngredientsForm = ({ children }) => {
             <Styles.FormButton type="submit" disabled={isSubmitting}>
               Search
             </Styles.FormButton>
-          </form>
-        </Styles.FormInputWrapper>
+          </Styles.FormInputWrapper>
+        </form>
       )}
     </Formik>
   );
