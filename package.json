@@ -37,11 +37,11 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
-    "predeploy": "pnpm run build",
-    "deploy": "gh-pages -d build",
+    "predeploy": "pnpm next build && next export",
+    "deploy": "next build && touch out/.nojekyll && git add out/ && git commit -m \"Deploy\" && git subtree push --prefix out origin gh-pages",
     "test": "jest --watch",
     "test:ci": "jest --ci"
   },
