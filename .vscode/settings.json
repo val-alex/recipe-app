@@ -1,7 +1,11 @@
 {
   "cSpell.words": [
     "browserslist",
+    "Cantarell",
+    "Fira",
     "Formik",
+    "globalstyles",
+    "Neue",
     "noopener",
     "noreferrer",
     "plugins",
@@ -11,7 +15,9 @@
     "proptypes",
     "rarr",
     "reduxjs",
+    "Roboto",
     "rushstack",
+    "Segoe",
     "spoonacular"
   ]
 }
