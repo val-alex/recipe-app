@@ -6,7 +6,7 @@ https://val-alex.github.io/recipe-app/
 
 - React.js
 - Next.js
-- Redux Thunk
+- Redux
 - Formik
 - Styled Components
 
@@ -16,7 +16,6 @@ I decided to update this up for modern times :)
 
 Still to come:
 
-- Migration from Redux Thunk and Saga to Redux Toolkit and RTK Query
 - Migrating from Formik to React Hook Forms
 - Add TypeScript
 - Add Material UI v5
@@ -47,6 +46,9 @@ This app helps you to find recipes for ingredients you have available
 (App displays list of recipes that you can make for given ingredients )
 
 ## Available Scripts
+
+Install Volta - https://volta.sh/
+Install pnpm - https://pnpm.io/
 
 #### `pnpm dev`
 
