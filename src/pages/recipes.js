@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
-import { selectRecipesSearchResults } from "../Store/Reducers/recipesSlice";
+import { selectRecipesSearchResults } from "@store/Reducers/recipesSlice";
 
 export const ResultsPageWrapper = styled.div`
   display: flex;

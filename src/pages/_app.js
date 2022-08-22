@@ -1,8 +1,8 @@
 import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
 
-import GlobalStyle from "../Components/GlobalStyles/globalStyles";
-import store from "../Store";
+import GlobalStyle from "@components/GlobalStyles/GlobalStyles";
+import store from "@store/index";
 
 const theme = {
   colors: {

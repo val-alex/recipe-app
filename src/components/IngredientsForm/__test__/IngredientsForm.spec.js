@@ -1,7 +1,7 @@
 import { Provider } from "react-redux";
 import renderer from "react-test-renderer";
 
-import store from "Store";
+import store from "store";
 
 import { IngredientsForm } from "../IngredientsForm.js";
 
