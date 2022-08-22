@@ -3,9 +3,24 @@
     "module": "esnext",
     "target": "es2015",
     "jsx": "react-jsx",
-    "strict": true
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@store/*": [
+        "./src/store/*"
+      ],
+      "@constants": [
+        "./src/constants.js"
+      ],
+    }
   },
   "include": [
     "./**/*"
-  ]
+  ],
+  "exclude": [
+    "./node_modules"
+  ],
 }

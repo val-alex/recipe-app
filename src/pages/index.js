@@ -1,10 +1,8 @@
-import Head from 'next/head';
+import Head from "next/head";
 import { useSelector } from "react-redux";
 
-import IngredientsForm from "../Components/Forms/ingredientsForm/IngredientsForm";
-import { selectRecipesRecentSearches } from "../Store/Reducers/recipesSlice";
-
-
+import IngredientsForm from "@components/IngredientsForm";
+import { selectRecipesRecentSearches } from "@store/Reducers/recipesSlice";
 
 export const Home = () => {
   const recipesRecentSearches = useSelector(selectRecipesRecentSearches);
@@ -32,8 +30,7 @@ export const Home = () => {
         </IngredientsForm>
       </main>
     </div>
-  )
+  );
 };
 
 export default Home;
-

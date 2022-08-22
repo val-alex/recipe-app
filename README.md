@@ -6,11 +6,21 @@ https://val-alex.github.io/recipe-app/
 
 - React.js
 - Next.js
-- Redux Thunk & Redux Sagas
+- Redux Thunk
 - Formik
 - Styled Components
 
 ## App description
+
+I decided to update this up for modern times :)
+
+Still to come:
+
+- Migration from Redux Thunk and Saga to Redux Toolkit and RTK Query
+- Migrating from Formik to React Hook Forms
+- Add TypeScript
+- Add Material UI v5
+- Add Jest and React Testing Library
 
 Using React + Redux, create a simple single page application with 2 views, displaying a list of items retrieved from a public api ( https://spoonacular.com/food-api/docs )
 
