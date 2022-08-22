@@ -7,7 +7,6 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
-  basePath: "",
 };
 
 module.exports = nextConfig;
