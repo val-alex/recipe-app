@@ -16,9 +16,9 @@ export const ResultsTitle = styled.h4`
 `;
 
 export const ResultsButton = styled.button`
-  background-color: #555;
+  background-color: hsl(0, 0%, 33%);
   border: none;
-  color: white;
+  color: hsl(0, 0%, 100%);
   padding: 1rem 2rem;
   text-align: center;
   text-decoration: none;

@@ -25,17 +25,18 @@ export const FormInput = styled.input`
 `;
 
 export const FormButton = styled.button`
-  background-color: #555;
+  background-color: hsl(0, 0%, 33%);
   border: none;
+  color: hsl(0, 0%, 100%);
   padding: 1rem 2rem;
   margin-top: 1.25rem;
   border-radius: 0.25rem;
 `;
 
 export const FormError = styled.div`
-  color: red;
+  color: hsl(0, 100%, 50%);
 `;
 
 export const FormValid = styled.div`
-  color: green;
+  color: hsl(120, 100%, 25%);
 `;
