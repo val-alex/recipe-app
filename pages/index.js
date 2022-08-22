@@ -13,7 +13,7 @@ export const Home = () => {
     <div>
       <Head>
         <title>Recipe App</title>
-        <meta name="description" content="recipe app" />
+        <meta name="find recipe" content="recipes" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -31,10 +31,6 @@ export const Home = () => {
           ) : null}
         </IngredientsForm>
       </main>
-
-      <footer>
-        Footer
-      </footer>
     </div>
   )
 };
