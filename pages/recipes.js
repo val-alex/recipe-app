@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
@@ -28,16 +28,13 @@ export const ResultsButton = styled.button`
   border-radius: 0.25rem;
 `;
 
-
 export const ResultsPage = () => {
   let router = useRouter();
   const recipesSearchResults = useSelector(selectRecipesSearchResults);
 
   return (
     <ResultsPageWrapper>
-      <ResultsButton onClick={() => router.back()}>
-        Back
-      </ResultsButton>
+      <ResultsButton onClick={() => router.back()}>Back</ResultsButton>
 
       <ResultsTitle>Recipes:</ResultsTitle>
 

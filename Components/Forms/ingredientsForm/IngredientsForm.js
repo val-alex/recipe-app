@@ -1,10 +1,13 @@
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 
 import { Formik } from "formik";
 import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 
-import { getRecipes, setRecentSearches } from "../../../Store/Reducers/recipesSlice";
+import {
+  getRecipes,
+  setRecentSearches,
+} from "../../../Store/Reducers/recipesSlice";
 
 import * as Styles from "./IngredientsFormStyles";
 
@@ -57,7 +60,6 @@ export const IngredientsForm = ({ children }) => {
         handleSubmit,
         isSubmitting,
       }) => (
-
         <form onSubmit={handleSubmit}>
           <Styles.FormInputWrapper>
             <Styles.FormLabel htmlFor="ingredients">

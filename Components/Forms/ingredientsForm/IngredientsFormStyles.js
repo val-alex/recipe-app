@@ -16,7 +16,7 @@ export const FormLabel = styled.label`
 export const FormInput = styled.input`
   padding: 0.75rem 1.25rem;
   margin: 0.5rem 0;
-  border: 0.20rem solid hsl(0, 0%, 80%);
+  border: 0.2rem solid hsl(0, 0%, 80%);
   border-radius: 0.25rem;
 
   &::has-error {
