@@ -1,7 +1,26 @@
-
 {
   "compilerOptions": {
-    "baseUrl": "src"
+    "module": "esnext",
+    "target": "es2015",
+    "jsx": "react-jsx",
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@store/*": [
+        "./src/store/*"
+      ],
+      "@constants": [
+        "./src/constants.js"
+      ],
+    }
   },
-  "include": ["src"]
+  "include": [
+    "./**/*"
+  ],
+  "exclude": [
+    "./node_modules"
+  ],
 }
