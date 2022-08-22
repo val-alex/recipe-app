@@ -19,13 +19,13 @@ export const ResultsButton = styled.button`
   background-color: #555;
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 1rem 2rem;
   text-align: center;
   text-decoration: none;
   display: flex;
-  font-size: 16px;
-  margin-top: 20px;
-  border-radius: 4px;
+  font-size: 1rem;
+  margin-top: 1.25rem;
+  border-radius: 0.25rem;
 `;
 
 

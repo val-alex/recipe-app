@@ -5,38 +5,31 @@ export const FormInputWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 20px;
+  margin: 1.25rem;
 `;
 
 export const FormLabel = styled.label`
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1rem;
 `;
 
 export const FormInput = styled.input`
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 3px solid #ccc;
-  border-radius: 4px;
+  padding: 0.75rem 1.25rem;
+  margin: 0.5rem 0;
+  border: 0.20rem solid hsl(0, 0%, 80%);
+  border-radius: 0.25rem;
 
   &::has-error {
-    border: 2px solid red;
+    border: 0.125rem solid hsl(0, 100%, 50%);
   }
 `;
 
 export const FormButton = styled.button`
   background-color: #555;
   border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: flex;
-  font-size: 16px;
-  margin-top: 20px;
-  border-radius: 4px;
+  padding: 1rem 2rem;
+  margin-top: 1.25rem;
+  border-radius: 0.25rem;
 `;
 
 export const FormError = styled.div`
