@@ -35,8 +35,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "export": "next export",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
     "deploy": "next build && touch out/.nojekyll && gh-pages -d out",
