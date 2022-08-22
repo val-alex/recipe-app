@@ -1,25 +1,8 @@
 {
   "cSpell.words": [
-    "browserslist",
-    "Cantarell",
-    "color",
-    "Fira",
     "Formik",
-    "globalstyles",
-    "Neue",
-    "noopener",
-    "noreferrer",
-    "plugins",
-    "precached",
+    "browserslist",
     "predeploy",
-    "preinstall",
-    "proptypes",
-    "rarr",
-    "redux",
-    "reduxjs",
-    "Roboto",
-    "rushstack",
-    "Segoe",
-    "spoonacular"
+    "reduxjs"
   ]
 }
