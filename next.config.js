@@ -5,6 +5,7 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  basePath: "/recipe-app",
 };
 
 module.exports = nextConfig;
