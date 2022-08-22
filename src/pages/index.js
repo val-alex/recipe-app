@@ -8,14 +8,14 @@ export const Home = () => {
   const recipesRecentSearches = useSelector(selectRecipesRecentSearches);
 
   return (
-    <div>
+    <>
       <Head>
-        <title>Recipe App</title>
-        <meta name="find recipe" content="recipes" />
         <link
-          rel="icon"
-          href={`${process.env.NEXT_PUBLIC_FAVICON}/favicon.ico`}
+          rel="shortcut icon"
+          href={`${process.env.NEXT_PUBLIC_BASE_PATH}/favicon.ico`}
         />
+        <meta name="find recipe" content="recipes" />
+        <title>Recipe App</title>
       </Head>
 
       <main>
@@ -32,7 +32,7 @@ export const Home = () => {
           ) : null}
         </IngredientsForm>
       </main>
-    </div>
+    </>
   );
 };
 
