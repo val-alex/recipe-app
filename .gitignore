@@ -9,8 +9,9 @@
 /coverage
 __snapshots__/
 
-# production
-/build
+# next
+.next
+/out/
 
 # misc
 .DS_Store
@@ -22,6 +23,3 @@ __snapshots__/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# next
-.next
