@@ -12,7 +12,7 @@ export const ResultsPageWrapper = styled.div`
 `;
 
 export const ResultsTitle = styled.h4`
-  margin-bottom: 0;
+  margin: 2rem 0 0.25rem;
 `;
 
 export const ResultsButton = styled.button`
@@ -30,21 +30,34 @@ export const ResultsButton = styled.button`
 
 export const ResultsPage = () => {
   let router = useRouter();
-  const recipesSearchResults = useSelector(selectRecipesSearchResults);
+  const recipes = useSelector(selectRecipesSearchResults);
+
+  if (recipes && recipes.status === "failure")
+    return (
+      <ResultsPageWrapper>
+        <strong style={{ marginTop: "1.25rem" }}>Failed to load:</strong>{" "}
+        <p style={{ color: "hsl(0, 100%, 50%)" }}>{recipes.message}</p>
+        <ResultsButton onClick={() => router.back()}>Back</ResultsButton>
+      </ResultsPageWrapper>
+    );
+
+  if (!recipes)
+    return (
+      <ResultsPageWrapper>
+        <p style={{ marginTop: "1.25rem" }}>Loading...</p>
+      </ResultsPageWrapper>
+    );
 
   return (
     <ResultsPageWrapper>
-      <ResultsButton onClick={() => router.back()}>Back</ResultsButton>
-
-      <ResultsTitle>Recipes:</ResultsTitle>
-
-      {recipesSearchResults.length ? (
+      {recipes && recipes.length ? (
         <ul>
-          {recipesSearchResults.map((result, index) => (
-            <li key={index}>{result.title}</li>
+          {recipes.map((recipe) => (
+            <li key={recipe.id}>{recipe.title}</li>
           ))}
         </ul>
       ) : null}
+      <ResultsButton onClick={() => router.back()}>Back</ResultsButton>
     </ResultsPageWrapper>
   );
 };

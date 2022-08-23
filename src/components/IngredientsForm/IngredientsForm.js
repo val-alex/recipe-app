@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
-
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
+import styled from "styled-components";
 
 import { getRecipes, setRecentSearches } from "@store/Reducers/recipesSlice";
 
@@ -18,7 +18,10 @@ export const IngredientsForm = ({ children }) => {
   } = useForm();
 
   const onSubmit = ({ ingredients }) => {
+    // redux saves search in store
     dispatch(setRecentSearches(ingredients));
+
+    // redux makes request to API
     dispatch(getRecipes(ingredients));
 
     router.push("/recipes");
@@ -36,7 +39,9 @@ export const IngredientsForm = ({ children }) => {
         />
 
         {errors.ingredients ? (
-          <span>Please enter 1 or more ingredients</span>
+          <p style={{ color: "hsl(0, 100%, 50%)" }}>
+            Please enter more ingredients, separated by comma
+          </p>
         ) : null}
 
         {children ? <div>{children}</div> : null}
