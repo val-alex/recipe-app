@@ -13,6 +13,9 @@ __snapshots__/
 .next
 /out/
 
+# vercel
+.vercel
+
 # misc
 .DS_Store
 .env.local

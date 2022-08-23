@@ -1,6 +1,6 @@
 # URL
 
-https://val-alex.github.io/recipe-app/
+https://recipe-app-three-wheat.vercel.app/recipe-app/
 
 ### Tech Stack
 
