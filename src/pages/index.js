@@ -2,10 +2,10 @@ import Head from "next/head";
 import { useSelector } from "react-redux";
 
 import IngredientsForm from "@components/IngredientsForm";
-import { selectRecipesRecentSearches } from "@store/Reducers/recipesSlice";
+import { selectRecentSearches } from "@store/services/recipesSlice";
 
 export const Home = () => {
-  const recipesRecentSearches = useSelector(selectRecipesRecentSearches);
+  const recipesRecentSearches = useSelector(selectRecentSearches);
 
   return (
     <>
