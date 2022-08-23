@@ -2,7 +2,8 @@ import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
-import { selectRecipesSearchResults } from "@store/Reducers/recipesSlice";
+import { useFindByIngredientsQuery } from "@src/store/services/findByIngredientsApi";
+import { selectIngredients } from "@store/services/recipesSlice";
 
 export const ResultsPageWrapper = styled.div`
   display: flex;
@@ -30,37 +31,42 @@ export const ResultsButton = styled.button`
 
 export const ResultsPage = () => {
   let router = useRouter();
-  const recipes = useSelector(selectRecipesSearchResults);
+  const ingredients = useSelector(selectIngredients);
+  console.log("ingredients:", ingredients);
+  const { data, error, isError, isLoading, isSuccess } =
+    useFindByIngredientsQuery(ingredients);
 
-  if (recipes && recipes.status === "failure")
+  if (isError)
     return (
       <ResultsPageWrapper>
         <strong style={{ marginTop: "1.25rem" }}>Failed to load:</strong>{" "}
-        <p style={{ color: "hsl(0, 100%, 50%)" }}>{recipes.message}</p>
+        {error && error.data ? (
+          <p style={{ color: "hsl(0, 100%, 50%)" }}>{error.data.message}</p>
+        ) : null}
         <ResultsButton onClick={() => router.back()}>Back</ResultsButton>
       </ResultsPageWrapper>
     );
 
-  if (!recipes)
+  if (isLoading)
     return (
       <ResultsPageWrapper>
         <p style={{ marginTop: "1.25rem" }}>Loading...</p>
       </ResultsPageWrapper>
     );
 
-  return (
+  return isSuccess ? (
     <ResultsPageWrapper>
       <ResultsTitle>Recipes:</ResultsTitle>
-      {recipes && recipes.length ? (
+      {data && data.length ? (
         <ul>
-          {recipes.map((recipe) => (
+          {data.map((recipe) => (
             <li key={recipe.id}>{recipe.title}</li>
           ))}
         </ul>
       ) : null}
       <ResultsButton onClick={() => router.back()}>Back</ResultsButton>
     </ResultsPageWrapper>
-  );
+  ) : null;
 };
 
 export default ResultsPage;
