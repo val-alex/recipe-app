@@ -46,14 +46,11 @@ This app helps you to find recipes for ingredients you have available
 
 ## Available Scripts
 
-Install Volta - https://volta.sh/
-Install pnpm - https://pnpm.io/
+#### `npm dev`
 
-#### `pnpm dev`
+#### `npm build`
 
-#### `pnpm build`
-
-#### `pnpm start`
+#### `npm start`
 
 ## Things to Add
 

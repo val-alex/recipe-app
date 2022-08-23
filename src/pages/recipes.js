@@ -32,7 +32,6 @@ export const ResultsButton = styled.button`
 export const ResultsPage = () => {
   let router = useRouter();
   const ingredients = useSelector(selectIngredients);
-  console.log("ingredients:", ingredients);
   const { data, error, isError, isLoading, isSuccess } =
     useFindByIngredientsQuery(ingredients);
 
