@@ -1,12 +1,17 @@
 import { API_KEY, NUMBER_OF_RECIPES } from "@constants";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
+import mockData from "../mockData.json";
+
 // Thunk
 export const getRecipes = createAsyncThunk(
   "recipes/getRecipes",
   async (ingredients, thunkAPI) => {
     const ingredientsList = ingredients;
     const recipesRequest = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredientsList}&number=${NUMBER_OF_RECIPES}&apiKey=${API_KEY}`;
+
+    // Mock
+    return mockData;
 
     return fetch(recipesRequest)
       .then((response) => response.json())

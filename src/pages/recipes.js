@@ -50,6 +50,7 @@ export const ResultsPage = () => {
 
   return (
     <ResultsPageWrapper>
+      <ResultsTitle>Recipes:</ResultsTitle>
       {recipes && recipes.length ? (
         <ul>
           {recipes.map((recipe) => (
