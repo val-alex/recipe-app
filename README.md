@@ -7,7 +7,7 @@ https://recipe-app-three-wheat.vercel.app/recipe-app/
 - React.js
 - Next.js
 - Redux
-- Formik
+- React Hook Form
 - Styled Components
 
 ## App description
@@ -16,7 +16,6 @@ I decided to update this up for modern times :)
 
 Still to come:
 
-- Migrating from Formik to React Hook Forms
 - Add TypeScript
 - Add Material UI v5
 - Add Jest and React Testing Library

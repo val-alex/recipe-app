@@ -1,17 +1,18 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
 import { API_KEY, NUMBER_OF_RECIPES } from "@constants";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 // Thunk
 export const getRecipes = createAsyncThunk(
   "recipes/getRecipes",
-
-  async (ingredients) => {
+  async (ingredients, thunkAPI) => {
     const ingredientsList = ingredients;
-
     const recipesRequest = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredientsList}&number=${NUMBER_OF_RECIPES}&apiKey=${API_KEY}`;
 
-    return fetch(recipesRequest).then((response) => response.json());
+    return fetch(recipesRequest)
+      .then((response) => response.json())
+      .catch((error) => {
+        console.log(error);
+      });
   }
 );
 
@@ -41,9 +42,10 @@ export const slice = createSlice({
       state.recipes = payload;
       state.isLoading = false;
     },
-    [getRecipes.rejected]: (state) => {
+    [getRecipes.rejected]: (state, { error }) => {
       state.isLoading = false;
       state.isError = true;
+      state.error = error;
     },
   },
 });
