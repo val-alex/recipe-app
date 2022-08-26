@@ -1,11 +1,12 @@
+import { NextPage } from "next";
 import Head from "next/head";
-import { useSelector } from "react-redux";
 
 import IngredientsForm from "@components/IngredientsForm";
+import { useAppSelector } from "@hooks";
 import { selectRecentSearches } from "@store/services/recipesSlice";
 
-export const Home = () => {
-  const recipesRecentSearches = useSelector(selectRecentSearches);
+export const Home: NextPage = () => {
+  const recipesRecentSearches = useAppSelector(selectRecentSearches);
 
   return (
     <>
