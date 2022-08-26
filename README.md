@@ -10,15 +10,17 @@ https://recipe-app-three-wheat.vercel.app/recipe-app/
 - React Hook Form
 - Styled Components
 
-## App description
+## In process
 
 I decided to update this up for modern times :)
 
 Still to come:
 
-- Add TypeScript
 - Add Material UI v5
 - Add Jest and React Testing Library
+- Add Reselect
+
+## App description
 
 Using React + Redux, create a simple single page application with 2 views, displaying a list of items retrieved from a public api ( https://spoonacular.com/food-api/docs )
 

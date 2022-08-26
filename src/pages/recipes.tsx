@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
-import { useSelector } from "react-redux";
 import styled from "styled-components";
 
-import { useFindByIngredientsQuery } from "@src/store/services/findByIngredientsApi";
+import { useAppSelector } from "@hooks";
+import { useFindByIngredientsQuery } from "@store/services/findByIngredientsApi";
 import { selectIngredients } from "@store/services/recipesSlice";
 
 export const ResultsPageWrapper = styled.div`
@@ -29,20 +29,47 @@ export const ResultsButton = styled.button`
   border-radius: 0.25rem;
 `;
 
+interface Recipe {
+  id: number;
+  image: string;
+  imageType: string;
+  likes: number;
+  missedIngredientCount: number;
+  missedIngredients: Array<Object>;
+  title: string;
+  unusedIngredients: Array<any>; // TODO: don't know whats inside
+  usedIngredientCount: number;
+  usedIngredients: Array<Object>;
+}
+
 export const ResultsPage = () => {
   let router = useRouter();
-  const ingredients = useSelector(selectIngredients);
-  console.log("ingredients:", ingredients);
+  const ingredients = useAppSelector(selectIngredients);
   const { data, error, isError, isLoading, isSuccess } =
     useFindByIngredientsQuery(ingredients);
+
+  const errorMessage = () => {
+    if (error) {
+      if ("status" in error) {
+        // you can access all properties of `FetchBaseQueryError` here
+        const errMsg =
+          "error" in error ? error.error : JSON.stringify(error.data);
+
+        return <p style={{ color: "hsl(0, 100%, 50%)" }}>{errMsg}</p>;
+      } else {
+        // you can access all properties of `SerializedError` here
+        return <p style={{ color: "hsl(0, 100%, 50%)" }}>{error.message}</p>;
+      }
+    } else {
+      return <p style={{ color: "hsl(0, 100%, 50%)" }}>Something went wrong</p>;
+    }
+  };
 
   if (isError)
     return (
       <ResultsPageWrapper>
-        <strong style={{ marginTop: "1.25rem" }}>Failed to load:</strong>{" "}
-        {error && error.data ? (
-          <p style={{ color: "hsl(0, 100%, 50%)" }}>{error.data.message}</p>
-        ) : null}
+        <strong style={{ marginTop: "1.25rem" }}>Failed to load:</strong>
+        {errorMessage()}
         <ResultsButton onClick={() => router.back()}>Back</ResultsButton>
       </ResultsPageWrapper>
     );
@@ -59,7 +86,7 @@ export const ResultsPage = () => {
       <ResultsTitle>Recipes:</ResultsTitle>
       {data && data.length ? (
         <ul>
-          {data.map((recipe) => (
+          {data.map((recipe: Recipe) => (
             <li key={recipe.id}>{recipe.title}</li>
           ))}
         </ul>

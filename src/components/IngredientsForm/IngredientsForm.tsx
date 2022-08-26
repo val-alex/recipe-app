@@ -1,23 +1,37 @@
+import React, { ReactNode } from "react";
+
 import { useRouter } from "next/router";
-import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { SubmitHandler, useForm } from "react-hook-form";
 
-import { setIngredients } from "@store/services/recipesSlice";
-
+import { useAppDispatch } from "@hooks";
+import {
+  setIngredients,
+  setRecentSearches,
+} from "@store/services/recipesSlice";
 import * as Styles from "./IngredientsFormStyles";
 
-export const IngredientsForm = ({ children }) => {
-  const dispatch = useDispatch();
+type Inputs = {
+  ingredients: string;
+};
+
+interface Props {
+  children?: ReactNode;
+}
+
+export const IngredientsForm = ({ children }: Props) => {
+  const dispatch = useAppDispatch();
   let router = useRouter();
 
   const {
     register,
+    setValue,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<Inputs>();
 
-  const onSubmit = ({ ingredients }) => {
+  const onSubmit: SubmitHandler<Inputs> = ({ ingredients }) => {
     dispatch(setIngredients(ingredients));
+    dispatch(setRecentSearches([ingredients]));
 
     router.push("/recipes");
   };
