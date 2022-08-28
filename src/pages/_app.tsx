@@ -1,8 +1,9 @@
+import { AppProps } from "next/app";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
 
-import store from "@src/store";
-import GlobalStyle from "@styles/GlobalStyles/";
+import store from "../store/store";
+import GlobalStyle from "../styles/GlobalStyles";
 
 const theme = {
   colors: {
@@ -11,7 +12,7 @@ const theme = {
   },
 };
 
-const App = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps }: AppProps) => {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
