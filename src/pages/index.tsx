@@ -1,5 +1,11 @@
+import { Typography } from "@mui/material";
 import { NextPage } from "next";
 import Head from "next/head";
+
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
 
 import IngredientsForm from "@components/IngredientsForm";
 import { useAppSelector } from "@hooks";
@@ -21,16 +27,27 @@ export const Home: NextPage = () => {
 
       <main>
         <IngredientsForm>
-          {recipesRecentSearches.length > 0 ? (
-            <div>
-              <h4>Recent Searches:</h4>
+          <div>
+            <Typography sx={{ mt: 4 }} variant="h5">
+              Recent Searches:
+            </Typography>
+
+            {recipesRecentSearches.length > 0 ? (
               <ol>
                 {recipesRecentSearches.map((ingredient, index) => (
-                  <li key={index}>{ingredient}</li>
+                  <li key={`${ingredient}-${index}`}>
+                    <Typography variant="body1">{ingredient}</Typography>
+                  </li>
                 ))}
               </ol>
-            </div>
-          ) : null}
+            ) : (
+              <ul>
+                <li>
+                  <Typography variant="body1">No recent searches</Typography>
+                </li>
+              </ul>
+            )}
+          </div>
         </IngredientsForm>
       </main>
     </>
