@@ -66,18 +66,19 @@ export const RecipesResults = () => {
     </Button>
   );
 
-  return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      justifyContent="center"
-    >
-      <Typography sx={{ mt: 2 }} variant="body1">
-        Loading...
-      </Typography>
-    </Box>
-  );
+  if (isLoading)
+    return (
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Typography sx={{ mt: 2 }} variant="body1">
+          Loading...
+        </Typography>
+      </Box>
+    );
 
   if (isError)
     return (
