@@ -1,22 +1,18 @@
-# URL
+## URL
 
-https://recipe-app-three-wheat.vercel.app/recipe-app/
+[https://recipe-app-val-alex.vercel.app/recipe-app](https://recipe-app-val-alex.vercel.app/recipe-app)
 
-### Tech Stack
+## Tech Stack
+
+I decided to update this test app for modern times :)
 
 - React.js
 - Next.js
-- Redux
+- Redux Toolkit + RTK Query
 - React Hook Form
 - Styled Components
-
-## In process
-
-I decided to update this up for modern times :)
-
-Still to come:
-
-- Add Jest
+- Material UI
+- Jest
 
 ## App description
 
@@ -28,13 +24,13 @@ Using React + Redux, create a simple single page application with 2 views, displ
 Pass the ingredients from the Ingredient Query text field to the findByIngredients api. On success, it should display the results on the next screen. Selecting a result should expand the result.
 This is a small application so gives an opportunity to demonstrate your technical abilities, development approach and initiative to interpret rough draft requirements.
 
-##### Spoonacular API reference
+## Spoonacular API reference
 
 Sign-up to spoonacular for a free public api and find your API key at https://spoonacular.com/food-api/console#Profile
 Documentation on authentication with your API key https://spoonacular.com/food-api/docs#Authentication
 Documentation for the findByIngredients endpoint https://spoonacular.com/food-api/docs#Search-Recipes-by-Ingredients
 
-### Use
+## Use
 
 This app helps you to find recipes for ingredients you have available
 
@@ -46,14 +42,7 @@ This app helps you to find recipes for ingredients you have available
 
 ## Available Scripts
 
-#### `npm dev`
-
-#### `npm build`
-
-#### `npm start`
-
-## Things to Add
-
-- "No recipes found" response if returned empty array
-- Error handling
-- Selectors for caching
+`npm run dev`  
+`npm run build`  
+`npm run export`  
+`npm run start`
