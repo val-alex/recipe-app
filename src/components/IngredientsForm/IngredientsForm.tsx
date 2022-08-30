@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
 import { Search as SearchIcon } from "@mui/icons-material";
 
@@ -67,7 +67,7 @@ export const IngredientsForm = ({ children }: IngredientsFormProps) => {
           variant="outlined"
           type="submit"
         >
-          Save
+          Search
         </Button>
 
         {children ? <div>{children}</div> : null}

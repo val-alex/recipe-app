@@ -39,7 +39,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "noUnusedParameters": true,
     "noUnusedLocals": true,
     "allowUnusedLabels": false,
   },
