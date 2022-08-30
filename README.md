@@ -16,9 +16,7 @@ I decided to update this up for modern times :)
 
 Still to come:
 
-- Add Material UI v5
-- Add Jest and React Testing Library
-- Add Reselect
+- Add Jest
 
 ## App description
 

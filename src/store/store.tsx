@@ -1,13 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { findByIngredientsApi } from "./services/findByIngredientsApi";
+import { fetchRecipesApi } from "./services/findByIngredientsApi";
 import { recipesSlice } from "./services/recipesSlice";
 
 const store = configureStore({
   reducer: {
     recipes: recipesSlice.reducer,
-    [findByIngredientsApi.reducerPath]: findByIngredientsApi.reducer,
+    [fetchRecipesApi.reducerPath]: fetchRecipesApi.reducer,
   },
-  middleware: (gDM) => gDM().concat(findByIngredientsApi.middleware),
+  middleware: (gDM) => gDM().concat(fetchRecipesApi.middleware),
 });
 
 export default store;
