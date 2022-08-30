@@ -1,5 +1,8 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
+import { Search as SearchIcon } from "@mui/icons-material";
+
+import { Box, Button, TextField, Typography } from "@mui/material/";
 import { useRouter } from "next/router";
 import { SubmitHandler, useForm } from "react-hook-form";
 
@@ -8,23 +11,21 @@ import {
   setIngredients,
   setRecentSearches,
 } from "@store/services/recipesSlice";
-import * as Styles from "./IngredientsFormStyles";
 
 type Inputs = {
   ingredients: string;
 };
 
-interface Props {
+interface IngredientsFormProps {
   children?: ReactNode;
 }
 
-export const IngredientsForm = ({ children }: Props) => {
+export const IngredientsForm = ({ children }: IngredientsFormProps) => {
   const dispatch = useAppDispatch();
   let router = useRouter();
 
   const {
     register,
-    setValue,
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>();
@@ -33,30 +34,44 @@ export const IngredientsForm = ({ children }: Props) => {
     dispatch(setIngredients(ingredients));
     dispatch(setRecentSearches([ingredients]));
 
-    router.push("/recipes");
+    router.push("/recipesResults");
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Styles.FormInputWrapper>
-        <Styles.FormLabel htmlFor="ingredients">Ingredients:</Styles.FormLabel>
-
-        <Styles.FormInput
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        sx={{ mt: 5 }}
+      >
+        <TextField
+          id="outlined-required"
+          label="Ingredients"
+          variant="outlined"
           defaultValue=""
           {...register("ingredients", { required: true })}
           placeholder="Enter your ingredients"
         />
 
         {errors.ingredients ? (
-          <p style={{ color: "hsl(0, 100%, 50%)" }}>
+          <Typography sx={{ color: "error.main", mt: 2 }} variant="body1">
             Please enter more ingredients, separated by comma
-          </p>
+          </Typography>
         ) : null}
 
-        {children ? <div>{children}</div> : null}
+        <Button
+          sx={{ mt: 3 }}
+          startIcon={<SearchIcon />}
+          variant="outlined"
+          type="submit"
+        >
+          Search
+        </Button>
 
-        <Styles.FormButton type="submit">Search</Styles.FormButton>
-      </Styles.FormInputWrapper>
+        {children ? <div>{children}</div> : null}
+      </Box>
     </form>
   );
 };

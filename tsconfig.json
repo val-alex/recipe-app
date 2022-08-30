@@ -10,6 +10,9 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
+      "@mui/styled-engine": [
+        "./node_modules/@mui/styled-engine"
+      ],
       "@components/*": [
         "./src/components/*"
       ],
@@ -36,6 +39,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "noUnusedLocals": true,
+    "allowUnusedLabels": false,
   },
   "include": [
     "next-env.d.ts",
