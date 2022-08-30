@@ -4,7 +4,6 @@
   "private": true,
   "homepage": "https://val-alexeev.github.io/recipe-app/",
   "dependencies": {
-    "@emotion/styled": "^11.10.0",
     "@fontsource/roboto": "^4.5.8",
     "@mui/icons-material": "^5.10.2",
     "@mui/lab": "^5.0.0-alpha.96",
