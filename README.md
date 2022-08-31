@@ -45,4 +45,6 @@ This app helps you to find recipes for ingredients you have available
 `npm run dev`  
 `npm run build`  
 `npm run export`  
-`npm run start`
+`npm run start`  
+`npm run test`  
+`npm run test:ci`
