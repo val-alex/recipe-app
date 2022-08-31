@@ -1,5 +1,5 @@
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { Box, Typography } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import { useRouter } from "next/router";
 
@@ -108,9 +108,18 @@ export const RecipesResults = () => {
       </Typography>
       {data && data.length ? (
         <ul>
-          {data.map((recipe: Recipe) => (
-            <li key={recipe.id}>
-              <Typography variant="body1">{recipe.title}</Typography>
+          {data.map((recipe: Recipe, index: number) => (
+            <li key={`${recipe.id}-${index}`}>
+              <Link
+                target="_blank"
+                href={`https://spoonacular.com/recipes/${recipe.title.replace(
+                  / /g,
+                  "-"
+                )}-${recipe.id}`}
+                underline="hover"
+              >
+                {recipe.title}
+              </Link>
             </li>
           ))}
         </ul>
