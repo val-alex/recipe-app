@@ -96,14 +96,19 @@ export const RecipesResults = () => {
       </Box>
     );
 
-  return isSuccess ? (
+  return (
     <Box
       display="flex"
       flexDirection="column"
       alignItems="center"
       justifyContent="center"
     >
-      <Typography sx={{ mt: 5, mb: 2 }} variant="h4">
+      <Typography
+        sx={{ mt: 5, mb: 2 }}
+        fontSize="1.8rem"
+        fontWeight="400"
+        variant="h1"
+      >
         Recipes:
       </Typography>
       {data && data.length ? (
@@ -128,7 +133,7 @@ export const RecipesResults = () => {
       )}
       <BackButton />
     </Box>
-  ) : null;
+  );
 };
 
 export default RecipesResults;

@@ -28,7 +28,12 @@ export const Home: NextPage = () => {
       <main>
         <IngredientsForm>
           <div>
-            <Typography sx={{ mt: 4 }} variant="h5">
+            <Typography
+              sx={{ mt: 4 }}
+              fontSize="1.8rem"
+              fontWeight="400"
+              variant="h1"
+            >
               Recent Searches:
             </Typography>
 
