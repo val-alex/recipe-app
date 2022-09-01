@@ -1,6 +1,6 @@
 ## URL
 
-[https://recipe-app-val-alex.vercel.app/recipe-app](https://recipe-app-val-alex.vercel.app/recipe-app)
+[https://recipe-app-val-alex.vercel.app/](-val-alex.vercel.app/)
 
 ## Tech Stack
 

@@ -29,7 +29,7 @@ export const IngredientsForm = ({ children }: IngredientsFormProps) => {
     dispatch(setIngredients(ingredients));
     dispatch(setRecentSearches([ingredients]));
 
-    router.push("/recipesResults");
+    router.push("/recipes/");
   };
 
   return (
