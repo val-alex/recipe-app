@@ -1,8 +1,8 @@
 import { AppProps } from "next/app";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
+import store from "../store";
 
-import store from "../store/store";
 import GlobalStyle from "../styles/GlobalStyles";
 
 const theme = {

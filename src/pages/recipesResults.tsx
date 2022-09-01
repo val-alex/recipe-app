@@ -3,9 +3,9 @@ import { Box, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import { useRouter } from "next/router";
 
-import { useAppSelector } from "@hooks";
-import { useGetRecipesByIngredientsQuery } from "@store/services/findByIngredientsApi";
-import { selectIngredients } from "@store/services/recipesSlice";
+import { useGetRecipesByIngredientsQuery } from "@/pages/api/findByIngredientsApi";
+import { selectIngredients } from "@/store/slices/recipesSlice";
+import { useAppSelector } from "src/hooks";
 
 interface Recipe {
   id: number;
@@ -15,7 +15,7 @@ interface Recipe {
   missedIngredientCount: number;
   missedIngredients: Array<Object>;
   title: string;
-  unusedIngredients: Array<any>; // TODO: don't know whats inside
+  unusedIngredients: Array<any>; // * Note: Don't know whats inside
   usedIngredientCount: number;
   usedIngredients: Array<Object>;
 }
@@ -74,7 +74,7 @@ export const RecipesResults = () => {
         alignItems="center"
         justifyContent="center"
       >
-        <Typography sx={{ mt: 2 }} variant="body1">
+        <Typography sx={{ mt: 5 }} variant="body1">
           Loading...
         </Typography>
       </Box>
