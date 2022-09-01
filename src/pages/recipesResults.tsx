@@ -23,7 +23,7 @@ interface Recipe {
 export const RecipesResults = () => {
   let router = useRouter();
   const ingredients = useAppSelector(selectIngredients);
-  const { data, error, isLoading, isError, isSuccess } =
+  const { data, error, isLoading, isError } =
     useGetRecipesByIngredientsQuery(ingredients);
 
   const errorMessage = () => {
