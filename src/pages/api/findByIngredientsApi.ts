@@ -1,5 +1,6 @@
-import { API_KEY, NUMBER_OF_RECIPES } from "@constants";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+
+import { API_KEY, NUMBER_OF_RECIPES } from "@/constants";
 
 // Define a service using a base URL and expected endpoints
 export const fetchRecipesApi = createApi({
@@ -18,3 +19,10 @@ export const fetchRecipesApi = createApi({
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
 export const { useGetRecipesByIngredientsQuery } = fetchRecipesApi;
+
+// Possible exports
+export const { endpoints, reducerPath, reducer, middleware } = fetchRecipesApi;
+// reducerPath, reducer, middleware are only used in store configuration
+// endpoints will have:
+// endpoints.getRecipesByIngredients.initiate(), endpoints.getRecipesByIngredients.select(), endpoints.getRecipesByIngredients.useQuery()
+// see `createApi` overview for _all exports_

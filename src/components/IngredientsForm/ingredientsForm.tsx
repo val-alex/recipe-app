@@ -1,16 +1,11 @@
-import { ReactNode } from "react";
-
 import { Search as SearchIcon } from "@mui/icons-material";
-
 import { Box, Button, TextField, Typography } from "@mui/material/";
 import { useRouter } from "next/router";
+import { ReactNode } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
-import { useAppDispatch } from "@hooks";
-import {
-  setIngredients,
-  setRecentSearches,
-} from "@store/services/recipesSlice";
+import { useAppDispatch } from "@/hooks";
+import { setIngredients, setRecentSearches } from "@/store/slices/recipesSlice";
 
 type Inputs = {
   ingredients: string;
@@ -75,5 +70,3 @@ export const IngredientsForm = ({ children }: IngredientsFormProps) => {
     </form>
   );
 };
-
-export default IngredientsForm;

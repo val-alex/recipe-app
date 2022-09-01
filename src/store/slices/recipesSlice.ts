@@ -1,16 +1,20 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "@store/store";
+
+import { RootState } from "./rootReducer";
+
 interface RecipesState {
+  status: "idle" | "loading" | "complete";
   ingredients: string;
   recentSearches: string[];
   recipesList: Array<Object>;
 }
 
 const initialState: RecipesState = {
+  status: "idle",
   ingredients: "",
   recentSearches: [],
   recipesList: [],
-} as RecipesState;
+};
 
 export const recipesSlice = createSlice({
   name: "recipes",
@@ -35,5 +39,7 @@ export const selectRecentSearches = (state: RootState) =>
   state.recipes.recentSearches;
 export const selectRecipesList = (state: RootState) =>
   state.recipes.recipesList;
+export const selectRecipesFetchStatus = (state: RootState) =>
+  state.recipes.status;
 
 export default recipesSlice.reducer;

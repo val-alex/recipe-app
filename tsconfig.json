@@ -1,5 +1,19 @@
 {
   "compilerOptions": {
+    "allowJs": true,
+    "allowUnusedLabels": false,
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "incremental": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noUnusedLocals": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
     "strict": true,
     "target": "es5",
     "lib": [
@@ -7,48 +21,47 @@
       "dom.iterable",
       "esnext"
     ],
-    "moduleResolution": "node",
-    "baseUrl": ".",
     "paths": {
-      "@mui/styled-engine": [
-        "./node_modules/@mui/styled-engine"
+      "@/mui/styled-engine": [
+        "node_modules/@mui/styled-engine"
       ],
-      "@components/*": [
-        "./src/components/*"
+      "@/components/*": [
+        "src/components/*"
       ],
-      "@styles/*": [
-        "./src/styles/*"
+      "@/pages/*": [
+        "src/pages/*"
       ],
-      "@store/*": [
-        "./src/store/*"
+      "@/store/*": [
+        "src/store/*"
       ],
-      "@constants": [
-        "src/constants.tsx"
+      "@/api/*": [
+        "src/api/*"
       ],
-      "@hooks": [
-        "src/hooks.tsx"
+      "@/styles/*": [
+        "src/styles/*"
+      ],
+      "@/utils/*": [
+        "src/utils/*"
+      ],
+      "@/constants": [
+        "src/constants.ts"
+      ],
+      "@/hooks": [
+        "src/hooks.ts"
       ],
     },
-    "allowJs": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "incremental": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "noUnusedLocals": true,
-    "allowUnusedLabels": false,
   },
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/pages/_app.tsx"
+    "jest.config.ts",
+    "jest.setup.js",
+    "next-env.d.ts",
+    "src/pages/_app.tsx",
+    "types.d.ts",
+    "jest.config.",
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
   ],
 }
