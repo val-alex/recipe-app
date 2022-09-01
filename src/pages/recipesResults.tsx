@@ -3,9 +3,9 @@ import { Box, Link, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import { useRouter } from "next/router";
 
-import { useAppSelector } from "@hooks";
-import { useGetRecipesByIngredientsQuery } from "@store/services/findByIngredientsApi";
-import { selectIngredients } from "@store/services/recipesSlice";
+import { useGetRecipesByIngredientsQuery } from "@/pages/api/findByIngredientsApi";
+import { selectIngredients } from "@/store/slices/recipesSlice";
+import { useAppSelector } from "src/hooks";
 
 interface Recipe {
   id: number;
@@ -15,7 +15,7 @@ interface Recipe {
   missedIngredientCount: number;
   missedIngredients: Array<Object>;
   title: string;
-  unusedIngredients: Array<any>; // TODO: don't know whats inside
+  unusedIngredients: Array<any>; // * Note: Don't know whats inside
   usedIngredientCount: number;
   usedIngredients: Array<Object>;
 }
@@ -23,7 +23,7 @@ interface Recipe {
 export const RecipesResults = () => {
   let router = useRouter();
   const ingredients = useAppSelector(selectIngredients);
-  const { data, error, isLoading, isError, isSuccess } =
+  const { data, error, isLoading, isError } =
     useGetRecipesByIngredientsQuery(ingredients);
 
   const errorMessage = () => {
@@ -74,7 +74,7 @@ export const RecipesResults = () => {
         alignItems="center"
         justifyContent="center"
       >
-        <Typography sx={{ mt: 2 }} variant="body1">
+        <Typography sx={{ mt: 5 }} variant="body1">
           Loading...
         </Typography>
       </Box>
@@ -96,14 +96,19 @@ export const RecipesResults = () => {
       </Box>
     );
 
-  return isSuccess ? (
+  return (
     <Box
       display="flex"
       flexDirection="column"
       alignItems="center"
       justifyContent="center"
     >
-      <Typography sx={{ mt: 5, mb: 2 }} variant="h4">
+      <Typography
+        sx={{ mt: 5, mb: 2 }}
+        fontSize="1.8rem"
+        fontWeight="400"
+        variant="h1"
+      >
         Recipes:
       </Typography>
       {data && data.length ? (
@@ -128,7 +133,7 @@ export const RecipesResults = () => {
       )}
       <BackButton />
     </Box>
-  ) : null;
+  );
 };
 
 export default RecipesResults;
