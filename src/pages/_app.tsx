@@ -2,7 +2,7 @@ import { AppProps } from "next/app";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
 
-import { GlobalStyle } from "@/styles/GlobalStyles/globalStyles";
+import { GlobalStyle } from "@/styles/globalStyles/globalStyles";
 import { store } from "../store";
 
 const theme = {
