@@ -130,3 +130,5 @@ export const RecipesResults = () => {
     </Box>
   ) : null;
 };
+
+export default RecipesResults;
