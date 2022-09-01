@@ -17,10 +17,7 @@ export const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <link
-          rel="shortcut icon"
-          href={`${process.env.NEXT_PUBLIC_BASE_PATH}/favicon.ico`}
-        />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <meta name="find recipe" content="recipes" />
         <title>Recipe App</title>
       </Head>

@@ -60,6 +60,7 @@
     "src/pages/_app.tsx",
     "types.d.ts",
     "jest.config.",
+    "next.config.js",
   ],
   "exclude": [
     "node_modules",
