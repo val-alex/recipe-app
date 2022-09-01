@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   /*
   1. Use a more-intuitive box-sizing model.
   */
@@ -72,5 +72,3 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 `;
-
-export default GlobalStyle;

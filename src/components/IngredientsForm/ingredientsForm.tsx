@@ -70,5 +70,3 @@ export const IngredientsForm = ({ children }: IngredientsFormProps) => {
     </form>
   );
 };
-
-export default IngredientsForm;

@@ -55,5 +55,3 @@ export const Home: NextPage = () => {
     </>
   );
 };
-
-export default Home;
