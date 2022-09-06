@@ -1,6 +1,6 @@
 import { IngredientsForm } from "@/components/IngredientsForm/ingredientsForm";
 import { Home } from "@/pages/index";
-// We're using our own custom render function and not RTL's render.
+import { RecipesResults } from "@/pages/recipes";
 import { renderWithProviders } from "@/utils/test-utils";
 
 describe("Home", () => {
@@ -11,11 +11,19 @@ describe("Home", () => {
   });
 });
 
+describe("RecipesResults", () => {
+  it("renders", () => {
+    const result = renderWithProviders(<RecipesResults />);
+
+    expect(result).toMatchSnapshot();
+  });
+});
+
 describe("IngredientsForm", () => {
   it("renders", () => {
     const result = renderWithProviders(
       <IngredientsForm>
-        <p>Hell World</p>
+        <p>Hello World</p>
       </IngredientsForm>
     );
 
