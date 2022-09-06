@@ -3,9 +3,9 @@ import { Box, Link, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import { useRouter } from "next/router";
 
+import { useAppSelector } from "@/hooks";
 import { useGetRecipesByIngredientsQuery } from "@/pages/api/findByIngredientsApi";
 import { selectIngredients } from "@/store/slices/recipesSlice";
-import { useAppSelector } from "src/hooks";
 
 interface Recipe {
   id: number;
