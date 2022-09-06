@@ -3,9 +3,9 @@ import { Box, Link, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import { useRouter } from "next/router";
 
+import { useAppSelector } from "@/hooks";
 import { useGetRecipesByIngredientsQuery } from "@/pages/api/findByIngredientsApi";
 import { selectIngredients } from "@/store/slices/recipesSlice";
-import { useAppSelector } from "src/hooks";
 
 interface Recipe {
   id: number;
@@ -15,7 +15,7 @@ interface Recipe {
   missedIngredientCount: number;
   missedIngredients: Array<Object>;
   title: string;
-  unusedIngredients: Array<any>; // * Note: Don't know whats inside
+  unusedIngredients: Array<any>;
   usedIngredientCount: number;
   usedIngredients: Array<Object>;
 }
@@ -29,7 +29,6 @@ export const RecipesResults = () => {
   const errorMessage = () => {
     if (error) {
       if ("status" in error) {
-        // you can access all properties of `FetchBaseQueryError` here
         const errMsg =
           "error" in error ? error.error : JSON.stringify(error.data);
 
@@ -39,7 +38,6 @@ export const RecipesResults = () => {
           </Typography>
         );
       } else {
-        // you can access all properties of `SerializedError` here
         return (
           <Typography sx={{ color: "error.light" }} variant="body1">
             {error.message}
