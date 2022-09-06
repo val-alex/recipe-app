@@ -29,10 +29,8 @@ export const recipesSlice = createSlice({
   },
 });
 
-// public exports
 export const { setIngredients, setRecentSearches } = recipesSlice.actions;
 
-// selectors
 export const selectIngredients = (state: RootState) =>
   state.recipes.ingredients;
 export const selectRecentSearches = (state: RootState) =>
