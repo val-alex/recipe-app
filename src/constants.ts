@@ -1,3 +1,3 @@
-export const API_KEY = `e705354394e94b2dbdffe4e3ed5b7626`;
+export const API_KEY = `${process.env.NEXT_PUBLIC_API_KEY}`;
 
 export const NUMBER_OF_RECIPES = 4;
